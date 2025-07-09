@@ -1,3 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&family=Poppins:wght@200;300;400&family=Lora:wght@400;500&display=swap');
 
 
-        
+/* Texto inicial */
+.seccion_objetivo{
+    text-align: center;
+    margin-top: 5rem;
+    position: relative;
+    
+}
+
+.seccion_objetivo h4{
+    font-weight: 200;
+    color: #001f3f;
+    font-size: 25px;
+    font-family: 'DM Sans', sans-serif;
+    padding-bottom: .75rem;
+    font-style: italic;
+}
+
+.seccion_objetivo h2{
+    font-weight: 400;
+    color: orange;
+    font-size: 50px;
+    padding-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.seccion_objetivo p{
+    font-weight: 200;
+    color: #001f3f;
+    font-size: 17px;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    max-width: 600px; 
+    margin: 0 auto;          
+    line-height: 1.6;       
+}
+
+/* Imagen central de la coach */
+
+.central_img_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.central_img_container img {
+  width: 70%;
+  height: auto; 
+  object-fit: cover; 
+  border-radius: 12px; 
+}
+
+/* Diseño de los divs informativos */
+
+.father_container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; 
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.trayectoria_container,
+.logros_container,
+.certificaciones_container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 6px rgba(230, 126, 34, 0.1);
+}
+
+.trayectoria_container:hover,
+.logros_container:hover,
+.certificaciones_container:hover {
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.25), 0 4px 10px rgba(230, 126, 34, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.trayectoria_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+
+.trayectoria_container h3
+,.right_containers h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    font-size: 22px;
+}
+
+.trayectoria_container p,
+.right_containers p{
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.right_containers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+

@@ -7,7 +7,6 @@
 
 
 
-
 * {
   margin: 0;
   padding: 0;
@@ -142,6 +141,25 @@ body, html {
     transition: all 1s ease;
     cursor: pointer;
 }
+
+.link-reset {
+  all: unset;
+  cursor: pointer;
+  color: inherit; 
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-decoration: none; 
+  display: inline; 
+}
+
+.navbar:hover .link-reset {
+  color: black;
+  transition: all 1s ease;
+}
+
 
 /* INICIO DEL HERO CONTENT */
 
