@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&family=Poppins:wght@200;300;400&family=Lora:wght@400;500&display=swap');
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-y: visible
+}
+
+/* CONFIGURACION INICIAL DEL HEADER */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6); 
+}
+
+/* BARRA DE NAVEGACION */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  color: white;
+  transition: all 1.3s ease;;
+}
+
+.navbar:hover{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  color: rgb(8, 8, 8);
+  background-color: azure;
+  transition: all 1s ease;;
+}
+
+.navbar:hover .nav-links a{
+    color: black;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  margin: auto;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 450;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', Montserrat;
+  padding: 2rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #283594;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width: 70%;
+}
+
+/* CONFIGURACION DEL LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.Logo_img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.logo p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+
+.navbar:hover .logo p{
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+/* INICIO DEL HERO CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+.hero_h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 320;
+  font-size: 2.8rem; 
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.hero_text {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.btn {
+  background-color: white;
+  color: black;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: 0.3s;
+  margin-top: 3rem;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+/* INFORMACION GENERAL SOBRE NOSOTROS Y  COACH */
+
+/* CONTENEDOR PRINCIPAL */
+.Info_Container {
+  padding: 4rem 2rem;
+  background: #fff;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items:center; 
+  gap: 2rem;
+}
+
+.title_infoContainer h2 {
+  font-size: 3rem;
+  color: #001f3f;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  text-align: right;
+}
+
+.txt_Nosotros {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.txt_Nosotros p {
+  background: #283594;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  border-radius: .75rem;
+  max-width: 900px;
+  padding: 1rem 2rem;
+  text-align: justify;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+
+/* Divs verticales */
+
+.carreras_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem; 
+  padding: 4rem 2rem;
+  flex-wrap: wrap; 
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Contenedor padre de imagenes e info */
+.father_img_container{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+/* Estilo general para imágenes */
+.father_img_container img {
+  width: 335px;
+  height: 510px;
+  object-fit: cover;
+  background: linear-gradient(145deg, blue, aqua) ;
+}
+
+/* Estilo para los textos debajo de cada imagen */
+.father_img_container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  text-align: justify;
+  color: #2e2e2e;
+  margin-top: 1rem;
+
+}
+
+.father_img_container p{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  color: #2e2e2e;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+
+.father_img_container a{
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*Planes Personalizados */
+
+.planesPersonalizados {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; 
+}
+
+.infoPlan {
+  background: linear-gradient(145deg, rgba(227, 77, 22, 0.696), rgba(213, 146, 121, 0.616));
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  max-width: 1000px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.infoPlan h1{
+  color: #fff;
+  font-size: 3rem;
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 5rem;
+} 
+
+.infoPlan h3{
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.infoPlan h2{
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  padding-bottom: 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.infoPlan ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*Por que son items, no es un texto */
+  justify-content: center; /* Para centrarlo despues de utilizar el gaqp */
+  gap: 5rem;
+}
+
+.infoPlan li {
+  margin-bottom: 1rem;
+}
+
+.infoPlan li a {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0,0,0,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.infoPlan li a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Divisiones */
+
+hr.sutil {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, .12);
+  margin: auto;
+  width: 90%;
+  align-items: center;
+}
+
+/* Division */
+
+hr.fuerte {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, .4);
+  margin: auto;
+  width: 90%;
+  align-items: center;
+}
+
+/* Maratones */
+
+.txt-maratones {
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.txt-maratones h1 {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  padding-bottom: 2rem;
+}
+
+.txt-maratones p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.maratones {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.maraton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.maraton-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.maraton-card h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+}
+
+.maraton-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.maraton-card a {
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.columna_izquierda.grande {
+  flex: 1.5;
+  position: sticky;
+  top: 4rem;  
+  align-self: flex-start;
+  align-self: start;   
+  height: fit-content;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.columna_derecha {
+  flex: 1.5;
+}
+
+.maraton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+
+/* Enlaces de informacion extra*/
+
+
+.closing_divs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem; 
+  padding: 4rem 2rem;
+  flex-wrap: wrap; 
+  max-width: 1200px;
+  margin: auto;
+}
+
+.father_img_container_ubs{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+/* Estilo general para imágenes */
+.father_img_container_ubs img {
+  width: 335px;
+  height: 225px;
+  object-fit: cover;
+  background: linear-gradient(145deg, #8B4513, #F5DEB3);
+}
+
+.father_img_container_ubs h1 {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  color: #2e2e2e;
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: center;
+  
+}
+
+.father_img_container_ubs p{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  color: #2e2e2e;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.father_img_container_ubs a{
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background: #001f3f;
+  color: #f5f5f5;
+  padding: 3rem 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;  
+  gap: 2rem;   
+  box-sizing: border-box;
+}
+
+.footer__col {
+  flex: 1 1 280px;
+  max-width: 320px; 
+  box-sizing: border-box;
+  text-align: left;
+}
+
+
+.footer__heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer__heading--separated {
+  margin-top: 1.5rem;
+}
+
+.footer__list,
+.footer__social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list .footer__item {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer__social-item a {
+  font-size: 1.4rem;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.footer__social-item a:hover {
+  color: #fff;
+}
+
+.footer__contact {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.footer__divider {
+  border: none;
+  margin: 2rem 0 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  height: 1.5px
+}
+
+.footer__copy {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
