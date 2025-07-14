@@ -78,16 +78,19 @@
   background-color: white;
   padding: 2rem;
   border-radius: 12px;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15), 0 2px 6px rgba(230, 126, 34, 0.1);
+  border-left: 6px solid transparent;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15), 0 2px 6px rgba(52, 152, 219, 0.1);
 }
 
 .trayectoria_container:hover,
 .logros_container:hover,
 .certificaciones_container:hover {
-  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.25), 0 4px 10px rgba(230, 126, 34, 0.15);
-  transition: box-shadow 0.3s ease;
+  border-left: 5px solid #0a2f66;
+  box-shadow: 0 10px 30px rgba(10, 47, 102, 0.25), 0 4px 10px rgba(10, 47, 102, 0.15);
 }
+
+
 
 .trayectoria_container {
   flex: 1;
