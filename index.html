@@ -1,301 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="corredoresValle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>CV Corredores del Valle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="corredoresValle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>CV Corredores del Valle</title>
 </head>
 
-
 <body>
-<header class="hero">
-  <!-- Cambiar imagen del hero -->
-  <img src="Img_CV/Hero_Index_img.jpeg" alt="hero" class="hero-img">
 
-  <nav class="navbar">
-  <ul class="nav-links left">
-    <li><a href="#Planes">Inicio</a></li>
-    <li><a href="Coach.html">Coach</a></li>
-  </ul>
+  <!-- ============================================================
+       NAVBAR — Ahora fixed con transición scroll
+       ============================================================ -->
+  <nav class="navbar" id="mainNavbar">
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="Coach.html">Coach</a></li>
+    </ul>
 
-  <div class="logo">
-    <img src="Img_CV/Logo.png" alt="Logo" class="Logo_img">
-    <p class="txt_lOGO"><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
-  </div>
+    <div class="logo">
+      <img src="Img_CV/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
+      <p><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
+    </div>
 
-  <ul class="nav-links right">
-    <li><a href="ubicaciones.html">Ubicaciones</a></li>
-    <li><a href="Contacto.html">Contacto</a></li>
-  </ul>
+    <ul class="nav-links">
+      <li><a href="ubicaciones.html">Ubicaciones</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
   </nav>
 
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <header class="hero" id="inicio">
+    <img src="Img_CV/Hero_Index_img.jpeg" alt="Corredores del Valle" class="hero-img">
+    <div class="hero-content">
+      <h1 class="hero_h1">Todo se entrena</h1>
+      <p class="hero_text">Entrena con nosotros, mejora contigo.</p>
+      <a href="#contacto" class="btn">Únete hoy</a>
+    </div>
+  </header>
 
-  <!-- HERO CONTENT -->
+  <!-- ============================================================
+       SOBRE NOSOTROS
+       ============================================================ -->
+  <section class="Info_Container">
+    <div class="title_infoContainer">
+      <h2>Sobre Nosotros</h2>
+    </div>
+    <div class="txt_Nosotros">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, aliquam cumque nisi sunt deserunt quae iure sapiente perspiciatis ab ex fugit recusandae quo. Amet harum quae, porro totam quos ducimus!</p>
+    </div>
+  </section>
 
+  <hr class="fuerte">
 
-  <div class="hero-content">
-    <h1 class="hero_h1">Todo se entrena</h1>
-    <p class="hero_text">Entrena con nosotros, mejora contigo.</p>
-    <a href="#contacto" class="btn">Únete hoy</a>
-  </div>
-</header>
+  <!-- ============================================================
+       TIPOS DE CARRERAS
+       ============================================================ -->
+  <section class="carreras_container">
+    <div class="father_img_container">
 
-<!-- Quienes somos? -->
-
-
-<section class="Info_Container">
-
-  <div class="title_infoContainer">
-    <h2>Sobre Nosotros</h2>
-  </div>
-
-  <div class="txt_Nosotros">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, aliquam cumque nisi sunt deserunt quae iure sapiente perspiciatis ab ex fugit recusandae quo. Amet harum quae, porro totam quos ducimus!</p>
-  </div>
-
-</section>
-
-
- <!-- DIVISION -->
-
- <hr class="fuerte">
-
-
-<!-- Div de carrera -->
-
-<section class="carreras_container">
-
-   <!-- Divs para imagenes verticales -->
-
-  <div class="father_img_container">
-    <div class="carreras_container_img">
-      <div class="carreras_img_wrapper">
-        <img src="Img_CV/Trail_img.jpeg" alt="trail_ultras">
+      <div class="carreras_container_img">
+        <div class="carreras_img_wrapper">
+          <img src="Img_CV/Trail_img.jpeg" alt="Trail y Ultras">
+        </div>
+        <h1>Trail y Ultras</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi, omnis neque consectetur reprehenderit voluptate est blanditiis nobis.</p>
+        <a href="#">Más información</a>
       </div>
-      <h1>Trail y Ultras</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi, omnis neque consectetur reprehenderit voluptate est blanditiis nobis.</p>
-      <a href="#">Mas informacion</a>
-    </div>
-    <div class="carreras_container_img">
-      <div class="carreras_img_wrapper">
-        <img src="Img_CV/opcion1_img_maratones_img.jpeg" alt="Maratones_Img">
+
+      <div class="carreras_container_img">
+        <div class="carreras_img_wrapper">
+          <img src="Img_CV/opcion1_img_maratones_img.jpeg" alt="Medio Maratón y Maratón">
+        </div>
+        <h1>½ Maratón y Maratón</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem nesciunt fugit nostrum. Atque facere sequi tempora.</p>
+        <a href="#">Más información</a>
       </div>
-      <h1>1/2 Maraton y Maraton</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem nesciunt fugit nostrum. Atque facere sequi tempora.</p>
-      <a href="#">Mas informacion</a>
-    </div>
-    <div class="carreras_container_img">
-      <div class="carreras_img_wrapper">
-        <img src="Img_CV/5y10k_div_img.jpeg" alt="Minis_Img">
+
+      <div class="carreras_container_img">
+        <div class="carreras_img_wrapper">
+          <img src="Img_CV/5y10k_div_img.jpeg" alt="Carreras 5k y 10k">
+        </div>
+        <h1>Carreras de 5k y 10k</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora molestiae corrupti ducimus cupiditate, est iusto?</p>
+        <a href="#">Más información</a>
       </div>
-      <h1>Carreras de 5k y 10k</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora molestiae corrupti ducimus cupiditate, est iusto?</p>
-      <a href="#">Mas informacion</a>
-    </div>
-  </div>
-</section>
-
-
- <!-- DIVISION -->
-
- <hr class="sutil">
-
-
-<!-- IMAGEN CENTRAL DE LA PAGINA -->
-<!-- PLANES PERSONALIZADO -->
-
-<section class="planesPersonalizados">
-<div class="infoPlan">
-  <h1>Plan General Gratis</h1>
-  <h3>Plan general para 10k y 21k</h3>
-
-  <h2>Plan general de 8 semanas gratis</h2>
-  <ul>
-    <li class="planes"><a href="#">Plan para 10k</a></li>
-    <li class="planes"><a href="#">Plan para 21k</a></li>
-  </ul>
-</div>
-</section>
-
- <!-- DIVISION -->
-
- <hr class="sutil">
-
-
-<!-- Maratones -->
-
- <div class="txt-maratones">
-      <h1>Maratones</h1>
-      <p>Reflexiones, eventos y cultura detrás del deporte que amamos correr.</p>
-    </div>
-
-<section class="maratones">
-  <div class="columna_izquierda maraton-card grande">
-    <img src="Img_CV/Boston_hero_img.jpeg" alt="Imagen destacada">
-    <h2>Los <span class="italic">Six Majors</span> del Maratón</h2>
-    <p>El circuito más rápido del mundo. Historias, atletas y el espíritu alemán.</p>
-    <a href="#">Ver más</a>
-  </div>
-
-  <div class="columna_derecha">
-    <div class="maraton-grid">
-
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>Coaching</h2>
-        <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-        <a href="#">Ver más</a>
-      </article>
-
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>Tecnica de carrera</h2>
-        <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-        <a href="#">Ver más</a>
-      </article>
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>Metodos de entrenamiento</h2>
-        <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-        <a href="#">Ver más</a>
-      </article>
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>La importancia del calentamiento</h2>
-        <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-        <a href="#">Ver más</a>
-      </article>
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>Fuerza para corredores</h2>
-        <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-        <a href="#">Ver más</a>
-      </article>
-
-      <article class="maraton-card">
-        <img src="Img_CV/PRUEBA.avif" alt="">
-        <h2>Maratón Powerade</h2>
-        <p>Un vistazo al corazón de la ciudad y al espíritu de sus corredores.</p>
-        <a href="#">Ver más</a>
-      </article>
 
     </div>
+  </section>
+
+  <hr class="sutil">
+
+  <!-- ============================================================
+       PLANES PERSONALIZADOS
+       ============================================================ -->
+  <section class="planesPersonalizados" id="Planes">
+    <div class="infoPlan">
+      <h1>Plan General Gratis</h1>
+      <h3>Plan general para 10k y 21k</h3>
+      <h2>Plan general de 8 semanas gratis</h2>
+      <ul>
+        <li><a href="#">Plan para 10k</a></li>
+        <li><a href="#">Plan para 21k</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="sutil">
+
+  <!-- ============================================================
+       MARATONES / ARTÍCULOS
+       ============================================================ -->
+  <div class="txt-maratones">
+    <h1>Maratones</h1>
+    <p>Reflexiones, eventos y cultura detrás del deporte que amamos correr.</p>
   </div>
-</section>
 
+  <section class="maratones">
+    <div class="columna_izquierda maraton-card grande">
+      <img src="Img_CV/Boston_hero_img.jpeg" alt="Six Majors del Maratón">
+      <h2>Los <span class="italic">Six Majors</span> del Maratón</h2>
+      <p>El circuito más rápido del mundo. Historias, atletas y el espíritu alemán.</p>
+      <a href="#">Ver más</a>
+    </div>
 
- <!-- DIVISION -->
+    <div class="columna_derecha">
+      <div class="maraton-grid">
 
- <hr class="sutil">
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="Coaching">
+          <h2>Coaching</h2>
+          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
+          <a href="#">Ver más</a>
+        </article>
 
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="Técnica de carrera">
+          <h2>Técnica de carrera</h2>
+          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
+          <a href="#">Ver más</a>
+        </article>
 
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="Métodos de entrenamiento">
+          <h2>Métodos de entrenamiento</h2>
+          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
+          <a href="#">Ver más</a>
+        </article>
 
- <!-- Comunidad, etc -->
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="La importancia del calentamiento">
+          <h2>La importancia del calentamiento</h2>
+          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
+          <a href="#">Ver más</a>
+        </article>
 
- <div class="txt-maratones">
-      <h1>Nuestro Viaje</h1>
-      <p>Momentos importantes del equipo</p>
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="Fuerza para corredores">
+          <h2>Fuerza para corredores</h2>
+          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
+          <a href="#">Ver más</a>
+        </article>
+
+        <article class="maraton-card">
+          <img src="Img_CV/PRUEBA.avif" alt="Maratón Powerade">
+          <h2>Maratón Powerade</h2>
+          <p>Un vistazo al corazón de la ciudad y al espíritu de sus corredores.</p>
+          <a href="#">Ver más</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="sutil">
+
+  <!-- ============================================================
+       NUESTRO VIAJE
+       ============================================================ -->
+  <div class="txt-maratones">
+    <h1>Nuestro Viaje</h1>
+    <p>Momentos importantes del equipo</p>
   </div>
 
   <section class="closing_divs">
+    <div class="father_img_container_ubs">
 
-   <!-- Divs para mas informacion -->
-
-  <div class="father_img_container_ubs">
-    <div>
-      <img src="" alt="">
-      <h1>Mundial Malaga</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi, omnis neque consectetur reprehenderit voluptate est blanditiis nobis.</p>
-      <a href="#">Ver más</a>
-    </div>
-    <div>
-      <img src="Img_CV/corredores_Header.webp" alt="COMUNIDAD">
-      <h1>Comunidad</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem nesciunt fugit nostrum. Atque facere sequi tempora.</p>
-      <a href="comunidad.html">Ver más</a>
-    </div>
-    <div>
-      <img src="" alt="">
-      <h1>Social</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora molestiae corrupti ducimus cupiditate, est iusto?</p>
-      <a href="#">Ver más</a>
-    </div>
-  </div>
-
-</section>
-
-
-
-<!-- Footer -->
-
-<footer class="footer">
-  <div class="footer__inner">
-    <!-- Menú -->
-    <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
-      <h4 class="footer__heading">Menú</h4>
-      <ul class="footer__list">
-        <li class="footer__item"><a href="#" class="footer__link">Coach</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">¿Quiénes somos?</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Planes</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Social</a></li>
-      </ul>
-    </div>
-
-    <!-- Ubicación y horario -->
-    <address class="footer__col footer__address">
-      <h4 class="footer__heading">Ubicación</h4>
-      <p class="footer__location">
-        Calzada del Valle,<br>
-        frente al monumento a la amistad Italia‑México
-      </p>
-      <h4 class="footer__heading footer__heading--separated">Horario</h4>
-      <p class="footer__hours">Martes de 7 am a 9 am</p>
-    </address>
-
-    <!-- Redes sociales + contacto -->
-    <div class="footer__col footer__social" aria-label="Síguenos">
-      <h4 class="footer__heading">Síguenos</h4>
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-      </ul>
-
-      <!-- Contacto dentro del mismo bloque -->
-      <div class="footer__contact">
-        <h4 class="footer__heading">Contacto</h4>
-        <p>Tel: 8110806131</p>
+      <div>
+        <img src="" alt="Mundial Málaga">
+        <h1>Mundial Málaga</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi.</p>
+        <a href="#">Ver más</a>
       </div>
+
+      <div>
+        <img src="Img_CV/corredores_Header.webp" alt="Comunidad Corredores del Valle">
+        <h1>Comunidad</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem.</p>
+        <a href="comunidad.html">Ver más</a>
+      </div>
+
+      <div>
+        <img src="" alt="Redes Sociales">
+        <h1>Social</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora.</p>
+        <a href="#">Ver más</a>
+      </div>
+
     </div>
-  </div>
+  </section>
 
-  <hr class="footer__divider">
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
 
-  <div class="footer__copy">
-    <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
-  </div>
-</footer>
+      <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
+        <h4 class="footer__heading">Menú</h4>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Coach</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">¿Quiénes somos?</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Planes</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Social</a></li>
+        </ul>
+      </div>
 
+      <address class="footer__col footer__address">
+        <h4 class="footer__heading">Ubicación</h4>
+        <p class="footer__location">
+          Calzada del Valle,<br>
+          frente al monumento a la amistad Italia‑México
+        </p>
+        <h4 class="footer__heading footer__heading--separated">Horario</h4>
+        <p class="footer__hours">Martes de 7 am a 9 am</p>
+      </address>
 
+      <div class="footer__col footer__social" aria-label="Síguenos">
+        <h4 class="footer__heading">Síguenos</h4>
+        <ul class="footer__social-list">
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__contact">
+          <h4 class="footer__heading">Contacto</h4>
+          <p>Tel: 8110806131</p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__copy">
+      <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPT: Navbar scroll behavior
+       ============================================================ -->
+  <script>
+    (function () {
+      const navbar = document.getElementById('mainNavbar');
+      const SCROLL_THRESHOLD = 60;
+
+      function onScroll() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // Estado inicial
+    })();
+  </script>
 
 </body>
 </html>

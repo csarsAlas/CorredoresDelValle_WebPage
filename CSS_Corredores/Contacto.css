@@ -324,24 +324,6 @@
 
     .char-counter.warn { color: var(--orange); }
 
-    /* ── HEADER ──────────────────────────────────────── */
-    .subpage-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,.08);
-    }
-
-     .subpage-header .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.75rem 2rem;
-      position: relative;
-    }
 
     /* ── Page hero banner ──────────────────────────────────────── */
     .page-banner {

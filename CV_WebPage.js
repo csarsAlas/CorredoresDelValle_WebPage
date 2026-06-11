@@ -333,26 +333,3 @@
     setTimeout(() => toast.classList.remove('show'), 6000);
   });
 })();
-
-
-/* ─────────────────────────────────────────
-   NAVBAR – Menú hamburguesa (todas las páginas)
-───────────────────────────────────────── */
-(function initNavbar() {
-  const toggle = document.getElementById('navToggle');
-  const menu   = document.getElementById('navMenu');
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('nav-open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-
-  /* Cerrar al hacer click en un link */
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', false);
-    });
-  });
-})();

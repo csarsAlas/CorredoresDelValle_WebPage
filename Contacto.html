@@ -12,32 +12,27 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     HEADER 
-═══════════════════════════════════════════ -->
-<header class="subpage-header">
-  <nav class="navbar" aria-label="Navegación principal">
-
-    
-    <ul class="nav-links left" aria-label="Links izquierda">
-      <li><a href="index.html">Inicio</a></li>
+ <!-- ============================================================
+       NAVBAR — Ahora fixed con transición scroll
+       ============================================================ -->
+  <nav class="navbar" id="mainNavbar">
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
       <li><a href="Coach.html">Coach</a></li>
     </ul>
 
-    <a href="index.html" class="logo" aria-label="Ir al inicio">
+    <div class="logo">
       <img src="Img_CV/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
-      <p class="txt_lOGO">Club Corredores del Valle</p>
-    </a>
+      <p><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
+    </div>
 
-    <ul class="nav-links right" aria-label="Links derecha">
+    <ul class="nav-links">
       <li><a href="ubicaciones.html">Ubicaciones</a></li>
-      <li><a href="Contacto.html" class="active" aria-current="page">Contacto</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
     </ul>
-
-
   </nav>
-</header>
 
+  
 <!-- Banner de página -->
 <div class="page-banner">
   <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Contacto</p>
@@ -270,10 +265,26 @@
 </footer>
 
 
-<!-- ═══════════════════════════════════════════
-     SCRIPT
-═══════════════════════════════════════════ -->
-<script src="CV_WebPage.js"></script>
+  <!-- ============================================================
+       SCRIPT: Navbar scroll behavior
+       ============================================================ -->
+  <script>
+    (function () {
+      const navbar = document.getElementById('mainNavbar');
+      const SCROLL_THRESHOLD = 60;
+
+      function onScroll() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // Estado inicial
+    })();
+  </script>
 
 </body>
 </html>
