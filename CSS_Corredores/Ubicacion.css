@@ -1,414 +1,402 @@
-/* =========================================
-       TOKENS GLOBALES – coherencia con el sitio
-    ========================================= */
-    :root {
-      --navy:       #001f3f;
-      --blue-mid:   #283594;
-      --orange:     #e34d16;
-      --cream:      #f9f7f4;
-      --white:      #ffffff;
-      --text-dark:  #1a1a2e;
-      --text-muted: #5a6275;
-      --border:     rgba(0,0,0,.12);
-      --shadow-sm:  0 2px 8px rgba(0,0,0,.08);
-      --shadow-md:  0 8px 32px rgba(0,0,0,.12);
-      --radius:     12px;
-      --font-display: 'Playfair Display', serif;
-      --font-body:    'DM Sans', sans-serif;
-      --font-nav:     'Poppins', sans-serif;
-    }
+/* =====================================================
+   UBICACIONES — Estilos específicos de página
+   Los tokens globales, navbar y footer vienen de
+   corredoresValle.css (cargado antes que este archivo)
+   ===================================================== */
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Variables locales (complementan los globales) ── */
+:root {
+  --navy:           #001f3f;
+  --blue-mid:       #283594;
+  --orange:         #e34d16;
+  --cream:          #f9f7f4;
+  --text-dark:      #1a1a2e;
+  --text-muted:     #5a6275;
+  --border:         rgba(0, 0, 0, .12);
+  --shadow-sm:      0 2px 8px rgba(0, 0, 0, .08);
+  --shadow-md:      0 8px 32px rgba(0, 0, 0, .12);
+  --radius:         12px;
+  --font-display:   'Playfair Display', serif;
+  --font-body:      'DM Sans', sans-serif;
+  --font-nav:       'Poppins', sans-serif;
+}
 
-    body {
-      font-family: var(--font-body);
-      color: var(--text-dark);
-      background: var(--white);
-    }
+/* ── Estado activo del enlace de navegación ── */
+.nav-active {
+  color: var(--color-brand-light, #e8eaf6) !important;
+  font-weight: 600 !important;
+}
 
-    /* =========================================
-       SECCIÓN: MAPA INTERACTIVO
-    ========================================= */
-    #ubicaciones {
-      padding: 5rem 2rem 4rem;
-      background: var(--cream);
-    }
+.navbar.scrolled .nav-active {
+  color: var(--navy) !important;
+  font-weight: 600 !important;
+}
 
-    .section-label {
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--orange);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
+/* =====================================================
+   PAGE BANNER
+   Compensa la altura de la navbar fija (72px)
+   ===================================================== */
+.page-banner {
+  padding-top: calc(72px + 3.5rem);
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #001f3f 100%);
+  text-align: center;
+}
 
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 600;
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: 0.75rem;
-    }
+.page-banner .breadcrumb {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, .45);
+  margin-bottom: 0.6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
-    .section-subtitle {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--text-muted);
-      text-align: center;
-      max-width: 520px;
-      margin: 0 auto 3rem;
-      line-height: 1.65;
-    }
+.page-banner .breadcrumb a {
+  color: rgba(255, 255, 255, .45);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-    /* Filtros de ruta */
-    .map-filters {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
+.page-banner .breadcrumb a:hover {
+  color: rgba(255, 255, 255, .85);
+}
 
-    .filter-btn {
-      font-family: var(--font-nav);
-      font-size: 0.78rem;
-      font-weight: 400;
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      border: 1.5px solid var(--border);
-      background: var(--white);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      letter-spacing: 0.04em;
-    }
+.page-banner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+}
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--navy);
-      color: var(--white);
-      border-color: var(--navy);
-    }
+/* =====================================================
+   SECCIÓN: MAPA INTERACTIVO
+   ===================================================== */
+#ubicaciones {
+  padding: 5rem 2rem 4rem;
+  background: var(--cream);
+}
 
-    .filter-btn[data-filter="facil"].active   { background: #1D9E75; border-color: #1D9E75; }
-    .filter-btn[data-filter="intermedio"].active { background: var(--blue-mid); border-color: var(--blue-mid); }
-    .filter-btn[data-filter="avanzado"].active   { background: var(--orange); border-color: var(--orange); }
+.section-label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 
-    /* Layout mapa + panel */
-    .map-layout {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      align-items: start;
-    }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
 
-    @media (max-width: 860px) {
-      .map-layout { grid-template-columns: 1fr; }
-    }
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  line-height: 1.65;
+}
 
-    /* Panel lateral – lista de ubicaciones */
-    .locations-panel {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      max-height: 520px;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      scrollbar-color: var(--border) transparent;
-    }
+/* ── Filtros de ruta ── */
+.map-filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
 
-    .location-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
-      padding: 1rem 1.1rem;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+.filter-btn {
+  font-family: var(--font-nav);
+  font-size: 0.78rem;
+  font-weight: 400;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.04em;
+}
 
-    .location-card:last-child { border-bottom: none; }
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
 
-    .location-card:hover,
-    .location-card.selected {
-      background: #f0f4ff;
-    }
+.filter-btn[data-filter="facil"].active      { background: #1D9E75; border-color: #1D9E75; }
+.filter-btn[data-filter="intermedio"].active { background: var(--blue-mid); border-color: var(--blue-mid); }
+.filter-btn[data-filter="avanzado"].active   { background: var(--orange); border-color: var(--orange); }
 
-    .location-card.selected {
-      border-left: 3px solid var(--blue-mid);
-    }
+/* ── Layout mapa + panel ── */
+.map-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
 
-    .loc-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+/* ── Panel lateral – lista de ubicaciones ── */
+.locations-panel {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  max-height: 520px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
 
-    .loc-icon.facil      { background: #E1F5EE; color: #0F6E56; }
-    .loc-icon.intermedio { background: #e8ecff; color: var(--blue-mid); }
-    .loc-icon.avanzado   { background: #FAECE7; color: #993C1D; }
+.location-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-    .loc-info { flex: 1; min-width: 0; }
+.location-card:last-child { border-bottom: none; }
 
-    .loc-name {
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0.2rem;
-    }
+.location-card:hover,
+.location-card.selected {
+  background: #f0f4ff;
+}
 
-    .loc-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
+.location-card.selected {
+  border-left: 3px solid var(--blue-mid);
+}
 
-    .diff-badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 500;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      letter-spacing: 0.03em;
-    }
+.loc-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
-    .diff-badge.facil      { background: #E1F5EE; color: #0F6E56; }
-    .diff-badge.intermedio { background: #e8ecff; color: var(--blue-mid); }
-    .diff-badge.avanzado   { background: #FAECE7; color: #993C1D; }
+.loc-icon.facil      { background: #E1F5EE; color: #0F6E56; }
+.loc-icon.intermedio { background: #e8ecff; color: var(--blue-mid); }
+.loc-icon.avanzado   { background: #FAECE7; color: #993C1D; }
 
-    /* Contenedor del mapa */
-    .map-container {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      position: relative;
-    }
+.loc-info { flex: 1; min-width: 0; }
 
-    #map {
-      height: 520px;
-      width: 100%;
-      z-index: 1;
-    }
+.loc-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+}
 
-    /* Popup de info flotante sobre el mapa */
-    .map-info-popup {
-      position: absolute;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      width: 270px;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      padding: 1.1rem 1.2rem;
-      z-index: 500;
-      transform: translateY(20px);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
+.loc-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
 
-    .map-info-popup.visible {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: all;
-    }
+.diff-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
 
-    .popup-close {
-      position: absolute;
-      top: 0.6rem;
-      right: 0.75rem;
-      background: none;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      line-height: 1;
-    }
+.diff-badge.facil      { background: #E1F5EE; color: #0F6E56; }
+.diff-badge.intermedio { background: #e8ecff; color: var(--blue-mid); }
+.diff-badge.avanzado   { background: #FAECE7; color: #993C1D; }
 
-    .popup-close:hover { color: var(--text-dark); }
+/* ── Contenedor del mapa ── */
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
 
-    .popup-badge-row {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      margin-bottom: 0.6rem;
-    }
+#map {
+  height: 520px;
+  width: 100%;
+  z-index: 1;
+}
 
-    .popup-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-      padding-right: 1rem;
-    }
+/* ── Popup de info flotante sobre el mapa ── */
+.map-info-popup {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 270px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 1.1rem 1.2rem;
+  z-index: 500;
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
 
-    .popup-address {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-    }
+.map-info-popup.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
 
-    .popup-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
+.popup-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+  transition: color 0.2s ease;
+}
 
-    .popup-stat {
-      background: var(--cream);
-      border-radius: 8px;
-      padding: 0.45rem 0.6rem;
-    }
+.popup-close:hover { color: var(--text-dark); }
 
-    .popup-stat-label {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: block;
-      margin-bottom: 0.15rem;
-    }
+.popup-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
 
-    .popup-stat-value {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
+.popup-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+  padding-right: 1rem;
+}
 
-    .popup-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+.popup-address {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
 
-    /* Marcadores personalizados Leaflet */
-    .custom-marker {
-      width: 36px;
-      height: 36px;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,.25);
-      border: 2px solid rgba(255,255,255,.8);
-    }
+.popup-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
 
-    .custom-marker i {
-      transform: rotate(45deg);
-      font-size: 0.85rem;
-    }
+.popup-stat {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+}
 
-    .marker-facil      { background: #1D9E75; }
-    .marker-intermedio { background: var(--blue-mid); }
-    .marker-avanzado   { background: var(--orange); }
+.popup-stat-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
 
-  
-    /* Botón hamburguesa (mobile) */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.4rem;
-      color: #1a1a1a;
-      padding: 0.25rem;
-    }
+.popup-stat-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
 
-    @media (max-width: 768px) {
-      .nav-toggle { display: block; }
+.popup-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
 
-      .subpage-header .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        box-shadow: 0 8px 24px rgba(0,0,0,.1);
-        padding: 1rem 2rem 1.5rem;
-      }
+/* ── Marcadores personalizados Leaflet ── */
+.custom-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
+  border: 2px solid rgba(255, 255, 255, .8);
+}
 
-      .subpage-header .nav-links.nav-open {
-        display: flex;
-      }
+.custom-marker i {
+  transform: rotate(45deg);
+  font-size: 0.85rem;
+}
 
-      .subpage-header .nav-links li {
-        border-bottom: 1px solid #f0f0f0;
-      }
+.marker-facil      { background: #1D9E75; }
+.marker-intermedio { background: var(--blue-mid); }
+.marker-avanzado   { background: var(--orange); }
 
-      .subpage-header .nav-links a {
-        display: block;
-        padding: 0.75rem 0;
-      }
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 860px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
 
-      /* Ocultar links laterales en mobile, solo mostrar el menú unificado */
-      .subpage-header .nav-links.left,
-      .subpage-header .nav-links.right {
-        display: none;
-      }
+  .locations-panel {
+    max-height: 300px;
+  }
+}
 
-      .subpage-header .nav-links#navMenu {
-        display: none;
-      }
+@media (max-width: 640px) {
+  #ubicaciones {
+    padding: 3rem 1.25rem 3rem;
+  }
 
-      .subpage-header .nav-links#navMenu.nav-open {
-        display: flex;
-      }
-    }
+  .page-banner {
+    padding-top: calc(72px + 2rem);
+    padding-bottom: 2rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 
-    /* ── Page hero banner ──────────────────────────────────────── */
-    .page-banner {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      padding: 3.5rem 2rem 2.5rem;
-      text-align: center;
-    }
-
-    .page-banner .breadcrumb {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 0.5rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .page-banner .breadcrumb a {
-      color: rgba(255,255,255,.5);
-      text-decoration: none;
-    }
-
-    .page-banner .breadcrumb a:hover { color: rgba(255,255,255,.8); }
-
-    .page-banner h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: #fff;
-      margin: 0;
-      font-weight: 600;
-    }
+  .map-info-popup {
+    width: calc(100% - 2rem);
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

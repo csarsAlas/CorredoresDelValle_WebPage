@@ -29,8 +29,8 @@
 
 
   <ul class="nav-links right">
-    <li><a href="#ubicaciones">Ubicaciones</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="ubicaciones.html">Ubicaciones</a></li>
+    <li><a href="Contacto.html">Contacto</a></li>
   </ul>
   </nav>
 
@@ -137,6 +137,27 @@
   </div>
 </footer>
 
+
+<!-- ============================================================
+       SCRIPT: Navbar scroll behavior
+       ============================================================ -->
+  <script>
+    (function () {
+      const navbar = document.getElementById('mainNavbar');
+      const SCROLL_THRESHOLD = 60;
+
+      function onScroll() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // Estado inicial
+    })();
+  </script>
 </body>
 
 </html>

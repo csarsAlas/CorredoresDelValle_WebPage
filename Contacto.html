@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <link rel="stylesheet" href="CSS_Corredores/Contacto.css">
+  <title>Contacto — Corredores del Valle</title>
   <link rel="stylesheet" href="corredoresValle.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500&family=Poppins:wght@200;300;400&family=Raleway:wght@800&display=swap">
+  <link rel="stylesheet" href="CSS_Corredores/Contacto.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
 
- <!-- ============================================================
-       NAVBAR — Ahora fixed con transición scroll
+  <!-- ============================================================
+       NAVBAR — Fixed con transición scroll (idéntico a index.html)
        ============================================================ -->
-  <nav class="navbar" id="mainNavbar">
+  <nav class="navbar scrolled" id="mainNavbar">
     <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
       <li><a href="Coach.html">Coach</a></li>
     </ul>
 
@@ -28,261 +26,254 @@
 
     <ul class="nav-links">
       <li><a href="ubicaciones.html">Ubicaciones</a></li>
-      <li><a href="Contacto.html">Contacto</a></li>
+      <li><a href="Contacto.html" class="nav-active">Contacto</a></li>
     </ul>
   </nav>
 
-  
-<!-- Banner de página -->
-<div class="page-banner">
-  <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Contacto</p>
-  <h1>¿Tienes preguntas?</h1>
-</div>
-
-
-<!-- ═══════════════════════════════════════════
-     SECCIÓN: FORMULARIO DE CONTACTO
-═══════════════════════════════════════════ -->
-<section id="contacto" aria-label="Formulario de contacto">
-
-  <p class="section-label">Contáctanos</p>
-  <h2 class="section-title" style="margin-bottom:.4rem">Escríbenos</h2>
-  <p class="section-subtitle">Uno de nuestros entrenadores se pondrá en contacto contigo a la brevedad.</p>
-
-  <div class="contact-layout">
-
-    <!-- Info lateral -->
-    <div class="contact-info">
-      <h3 class="contact-info-title">Únete a la comunidad de corredores</h3>
-      <p class="contact-info-text">
-        Ya seas principiante o corredor avanzado, en Club Corredores del Valle encontrarás un equipo que te acompañará en cada kilómetro. Resolvemos tus dudas sobre planes de entrenamiento, rutas y eventos.
-      </p>
-      <div class="contact-details">
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">
-            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          </div>
-          <div>
-            <span class="contact-detail-label">Ubicación</span>
-            <span class="contact-detail-value">Calzada del Valle, frente al monumento Italia‑México</span>
-          </div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          </div>
-          <div>
-            <span class="contact-detail-label">WhatsApp</span>
-            <span class="contact-detail-value">81 1080 6131</span>
-          </div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">
-            <i class="fa-solid fa-clock" aria-hidden="true"></i>
-          </div>
-          <div>
-            <span class="contact-detail-label">Entrenamientos</span>
-            <span class="contact-detail-value">Martes · 7:00 – 9:00 am</span>
-          </div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </div>
-          <div>
-            <span class="contact-detail-label">Instagram</span>
-            <span class="contact-detail-value">@corredor.valle</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Formulario -->
-    <div class="contact-form-card">
-      <form id="contactForm" novalidate aria-label="Formulario de contacto">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="nombre">Nombre completo<span aria-hidden="true">*</span></label>
-            <input class="form-input" type="text" id="nombre" name="nombre"
-              placeholder="Ej. Sofía Ramírez" autocomplete="name"
-              aria-required="true" aria-describedby="error-nombre">
-            <p class="field-error" id="error-nombre" role="alert" aria-live="polite">
-              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-              <span></span>
-            </p>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="telefono">Teléfono<span aria-hidden="true">*</span></label>
-            <input class="form-input" type="tel" id="telefono" name="telefono"
-              placeholder="Ej. 81 1234 5678" autocomplete="tel"
-              aria-required="true" aria-describedby="error-telefono">
-            <p class="field-error" id="error-telefono" role="alert" aria-live="polite">
-              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-              <span></span>
-            </p>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="email">Correo electrónico<span aria-hidden="true">*</span></label>
-          <input class="form-input" type="email" id="email" name="email"
-            placeholder="tu@correo.com" autocomplete="email"
-            aria-required="true" aria-describedby="error-email">
-          <p class="field-error" id="error-email" role="alert" aria-live="polite">
-            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-            <span></span>
-          </p>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="asunto">Asunto<span aria-hidden="true">*</span></label>
-          <select class="form-select" id="asunto" name="asunto"
-            aria-required="true" aria-describedby="error-asunto">
-            <option value="">Selecciona un tema…</option>
-            <option value="plan">Planes de entrenamiento</option>
-            <option value="info">Información general del club</option>
-            <option value="ruta">Rutas y ubicaciones</option>
-            <option value="evento">Eventos y competencias</option>
-            <option value="coach">Asesoría con la coach</option>
-            <option value="otro">Otro</option>
-          </select>
-          <p class="field-error" id="error-asunto" role="alert" aria-live="polite">
-            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-            <span></span>
-          </p>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="mensaje">Mensaje<span aria-hidden="true">*</span></label>
-          <textarea class="form-textarea" id="mensaje" name="mensaje"
-            placeholder="Cuéntanos cómo podemos ayudarte…"
-            maxlength="500"
-            aria-required="true" aria-describedby="error-mensaje char-count"></textarea>
-          <p class="char-counter" id="char-count">0 / 500 caracteres</p>
-          <p class="field-error" id="error-mensaje" role="alert" aria-live="polite">
-            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-            <span></span>
-          </p>
-        </div>
-
-        <div class="privacy-row">
-          <input type="checkbox" id="privacidad" name="privacidad" aria-required="true">
-          <label for="privacidad">
-            Acepto el tratamiento de mis datos conforme al <a href="#">Aviso de Privacidad</a>. No compartiremos tu información con terceros.
-          </label>
-        </div>
-        <p class="field-error" id="error-privacidad" style="margin-top:-0.8rem;margin-bottom:1rem;" role="alert" aria-live="polite">
-          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-          <span></span>
-        </p>
-
-        <button type="submit" class="btn-submit" id="btnSubmit">
-          <span class="spinner" aria-hidden="true"></span>
-          <span class="btn-text">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true" style="margin-right:0.4rem"></i>
-            Enviar mensaje
-          </span>
-        </button>
-
-        <!-- Toast de éxito -->
-        <div class="form-success-toast" id="successToast" role="status" aria-live="polite">
-          <div class="toast-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
-          <div>
-            <p class="toast-title">¡Mensaje enviado!</p>
-            <p class="toast-text">Gracias por escribirnos. Uno de nuestros entrenadores te contactará pronto.</p>
-          </div>
-        </div>
-
-      </form>
-    </div>
-
+  <!-- ============================================================
+       BANNER DE PÁGINA
+       ============================================================ -->
+  <div class="page-banner">
+    <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Contacto</p>
+    <h1>¿Tienes preguntas?</h1>
   </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     FOOTER COMPARTIDO
-═══════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="footer__inner">
-
-    <!-- Menú -->
-    <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
-      <h4 class="footer__heading">Menú</h4>
-      <ul class="footer__list">
-        <li class="footer__item"><a href="Coach.html" class="footer__link">Coach</a></li>
-        <li class="footer__item"><a href="index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
-        <li class="footer__item"><a href="index.html#planes" class="footer__link">Planes</a></li>
-        <li class="footer__item"><a href="index.html#social" class="footer__link">Social</a></li>
-      </ul>
-    </div>
-
-    <!-- Ubicación y horario -->
-    <address class="footer__col footer__address">
-      <h4 class="footer__heading">Ubicación</h4>
-      <p class="footer__location">
-        Calzada del Valle,<br>
-        frente al monumento a la amistad Italia‑México
-      </p>
-      <h4 class="footer__heading footer__heading--separated">Horario</h4>
-      <p class="footer__hours">Martes de 7 am a 9 am</p>
-    </address>
-
-    <!-- Redes sociales + contacto -->
-    <div class="footer__col footer__social" aria-label="Síguenos">
-      <h4 class="footer__heading">Síguenos</h4>
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-      </ul>
-      <div class="footer__contact">
-        <h4 class="footer__heading">Contacto</h4>
-        <p>Tel: 81 1080 6131</p>
-      </div>
-    </div>
-
-  </div>
-
-  <hr class="footer__divider">
-
-  <div class="footer__copy">
-    <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
 
   <!-- ============================================================
-       SCRIPT: Navbar scroll behavior
+       SECCIÓN: FORMULARIO DE CONTACTO
        ============================================================ -->
+  <section id="contacto" aria-label="Formulario de contacto">
+
+    <p class="section-label">Contáctanos</p>
+    <h2 class="section-title" style="margin-bottom:.4rem">Escríbenos</h2>
+
+    <div class="contact-layout">
+
+      <!-- Info lateral -->
+      <div class="contact-info">
+        <h3 class="contact-info-title">Únete a la comunidad de corredores</h3>
+        <p class="contact-info-text">
+          Ya seas principiante o corredor avanzado, en Club Corredores del Valle encontrarás un equipo que te acompañará en cada kilómetro. Resolvemos tus dudas sobre planes de entrenamiento, rutas y eventos.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="contact-detail-label">Ubicación</span>
+              <span class="contact-detail-value">Calzada del Valle, frente al monumento Italia‑México</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="contact-detail-label">WhatsApp</span>
+              <span class="contact-detail-value">81 1080 6131</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="contact-detail-label">Entrenamientos</span>
+              <span class="contact-detail-value">Martes · 7:00 – 9:00 am</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="contact-detail-label">Instagram</span>
+              <span class="contact-detail-value">@corredor.valle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-card">
+        <form id="contactForm" novalidate aria-label="Formulario de contacto">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre completo<span aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="nombre" name="nombre"
+                placeholder="Ej. Sofía Ramírez" autocomplete="name"
+                aria-required="true" aria-describedby="error-nombre">
+              <p class="field-error" id="error-nombre" role="alert" aria-live="polite">
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <span></span>
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="telefono">Teléfono<span aria-hidden="true">*</span></label>
+              <input class="form-input" type="tel" id="telefono" name="telefono"
+                placeholder="Ej. 81 1234 5678" autocomplete="tel"
+                aria-required="true" aria-describedby="error-telefono">
+              <p class="field-error" id="error-telefono" role="alert" aria-live="polite">
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <span></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Correo electrónico<span aria-hidden="true">*</span></label>
+            <input class="form-input" type="email" id="email" name="email"
+              placeholder="tu@correo.com" autocomplete="email"
+              aria-required="true" aria-describedby="error-email">
+            <p class="field-error" id="error-email" role="alert" aria-live="polite">
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+              <span></span>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="asunto">Asunto<span aria-hidden="true">*</span></label>
+            <select class="form-select" id="asunto" name="asunto"
+              aria-required="true" aria-describedby="error-asunto">
+              <option value="">Selecciona un tema…</option>
+              <option value="plan">Planes de entrenamiento</option>
+              <option value="info">Información general del club</option>
+              <option value="ruta">Rutas y ubicaciones</option>
+              <option value="evento">Eventos y competencias</option>
+              <option value="coach">Asesoría con la coach</option>
+              <option value="otro">Otro</option>
+            </select>
+            <p class="field-error" id="error-asunto" role="alert" aria-live="polite">
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+              <span></span>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Mensaje<span aria-hidden="true">*</span></label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje"
+              placeholder="Cuéntanos cómo podemos ayudarte…"
+              maxlength="500"
+              aria-required="true" aria-describedby="error-mensaje char-count"></textarea>
+            <p class="char-counter" id="char-count">0 / 500 caracteres</p>
+            <p class="field-error" id="error-mensaje" role="alert" aria-live="polite">
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+              <span></span>
+            </p>
+          </div>
+
+          <div class="privacy-row">
+            <input type="checkbox" id="privacidad" name="privacidad" aria-required="true">
+            <label for="privacidad">
+              Acepto el tratamiento de mis datos conforme al <a href="#">Aviso de Privacidad</a>. No compartiremos tu información con terceros.
+            </label>
+          </div>
+          <p class="field-error" id="error-privacidad" style="margin-top:-0.8rem;margin-bottom:1rem;" role="alert" aria-live="polite">
+            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+            <span></span>
+          </p>
+
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-text">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true" style="margin-right:0.4rem"></i>
+              Enviar mensaje
+            </span>
+          </button>
+
+          <!-- Toast de éxito -->
+          <div class="form-success-toast" id="successToast" role="status" aria-live="polite">
+            <div class="toast-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+            <div>
+              <p class="toast-title">¡Mensaje enviado!</p>
+              <p class="toast-text">Gracias por escribirnos. Uno de nuestros entrenadores te contactará pronto.</p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
+        <h4 class="footer__heading">Menú</h4>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="Coach.html" class="footer__link">Coach</a></li>
+          <li class="footer__item"><a href="index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
+          <li class="footer__item"><a href="index.html#Planes" class="footer__link">Planes</a></li>
+          <li class="footer__item"><a href="index.html#social" class="footer__link">Social</a></li>
+        </ul>
+      </div>
+
+      <address class="footer__col footer__address">
+        <h4 class="footer__heading">Ubicación</h4>
+        <p class="footer__location">
+          Calzada del Valle,<br>
+          frente al monumento a la amistad Italia‑México
+        </p>
+        <h4 class="footer__heading footer__heading--separated">Horario</h4>
+        <p class="footer__hours">Martes de 7 am a 9 am</p>
+      </address>
+
+      <div class="footer__col footer__social" aria-label="Síguenos">
+        <h4 class="footer__heading">Síguenos</h4>
+        <ul class="footer__social-list">
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__contact">
+          <h4 class="footer__heading">Contacto</h4>
+          <p>Tel: 81 1080 6131</p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__copy">
+      <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="CV_WebPage.js"></script>
+
+  <!-- Navbar scroll behavior — subpágina sin hero, siempre fondo sólido -->
   <script>
     (function () {
       const navbar = document.getElementById('mainNavbar');
-      const SCROLL_THRESHOLD = 60;
 
       function onScroll() {
-        if (window.scrollY > SCROLL_THRESHOLD) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
+        // En subpáginas sin hero de imagen la navbar mantiene siempre .scrolled
+        navbar.classList.add('scrolled');
       }
 
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // Estado inicial
+      onScroll();
     })();
   </script>
 

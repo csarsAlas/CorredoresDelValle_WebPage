@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubicaciones</title>
+  <title>Ubicaciones — Corredores del Valle</title>
+  <!-- Estilos globales del sitio (navbar, footer, tokens) -->
+  <link rel="stylesheet" href="corredoresValle.css">
+  <!-- Estilos específicos de esta página -->
   <link rel="stylesheet" href="CSS_Corredores/Ubicacion.css">
-   <link rel="stylesheet" href="corredoresValle.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500&family=Poppins:wght@200;300;400&family=Raleway:wght@800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 
 <body>
-<body>
 
- <!-- ============================================================
-       NAVBAR — Ahora fixed con transición scroll
+  <!-- ============================================================
+       NAVBAR — Fixed con transición scroll (idéntico a index.html)
        ============================================================ -->
-  <nav class="navbar" id="mainNavbar">
+  <nav class="navbar scrolled" id="mainNavbar">
     <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
       <li><a href="Coach.html">Coach</a></li>
     </ul>
 
@@ -29,168 +29,163 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="ubicaciones.html">Ubicaciones</a></li>
+      <li><a href="ubicaciones.html" class="nav-active">Ubicaciones</a></li>
       <li><a href="Contacto.html">Contacto</a></li>
     </ul>
   </nav>
 
-
-<!-- Banner de página -->
-<div class="page-banner">
-  <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Ubicaciones</p>
-  <h1>Nuestras Ubicaciones</h1>
-</div>
-
-
-<!-- ═══════════════════════════════════════════
-     SECCIÓN: MAPA INTERACTIVO
-═══════════════════════════════════════════ -->
-<section id="ubicaciones" aria-label="Mapa de rutas y ubicaciones">
-
-  <p class="section-label">Rutas del club</p>
-  <h2 class="section-title">Explora las rutas</h2>
-  <p class="section-subtitle">Selecciona una ubicación para ver detalles, horarios y nivel de dificultad.</p>
-
-  <!-- Filtros -->
-  <div class="map-filters" role="group" aria-label="Filtrar por dificultad">
-    <button class="filter-btn active" data-filter="todas">Todas</button>
-    <button class="filter-btn" data-filter="facil">Fácil</button>
-    <button class="filter-btn" data-filter="intermedio">Intermedio</button>
-    <button class="filter-btn" data-filter="avanzado">Avanzado</button>
-  </div>
-
-  <div class="map-layout">
-    <!-- Panel lateral -->
-    <div class="locations-panel" id="locationsPanel" role="list" aria-label="Lista de ubicaciones"></div>
-
-    <!-- Mapa -->
-    <div class="map-container">
-      <div id="map" role="application" aria-label="Mapa interactivo de rutas"></div>
-
-      <!-- Popup flotante con info detallada -->
-      <div class="map-info-popup" id="mapInfoPopup" aria-live="polite">
-        <button class="popup-close" id="popupClose" aria-label="Cerrar información">×</button>
-        <div class="popup-badge-row">
-          <span class="diff-badge" id="popupDiff"></span>
-          <span style="font-size:0.75rem;color:var(--text-muted)" id="popupCategory"></span>
-        </div>
-        <p class="popup-title" id="popupTitle"></p>
-        <p class="popup-address" id="popupAddress"></p>
-        <div class="popup-stats">
-          <div class="popup-stat">
-            <span class="popup-stat-label">Distancia</span>
-            <span class="popup-stat-value" id="popupDist"></span>
-          </div>
-          <div class="popup-stat">
-            <span class="popup-stat-label">Dificultad</span>
-            <span class="popup-stat-value" id="popupDiffVal"></span>
-          </div>
-          <div class="popup-stat">
-            <span class="popup-stat-label">Horario</span>
-            <span class="popup-stat-value" id="popupHorario"></span>
-          </div>
-          <div class="popup-stat">
-            <span class="popup-stat-label">Día</span>
-            <span class="popup-stat-value" id="popupDia"></span>
-          </div>
-        </div>
-        <p class="popup-desc" id="popupDesc"></p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     FOOTER COMPARTIDO
-═══════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="footer__inner">
-
-    <!-- Menú -->
-    <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
-      <h4 class="footer__heading">Menú</h4>
-      <ul class="footer__list">
-        <li class="footer__item"><a href="Coach.html" class="footer__link">Coach</a></li>
-        <li class="footer__item"><a href="index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
-        <li class="footer__item"><a href="index.html#planes" class="footer__link">Planes</a></li>
-        <li class="footer__item"><a href="index.html#social" class="footer__link">Social</a></li>
-      </ul>
-    </div>
-
-    <!-- Ubicación y horario -->
-    <address class="footer__col footer__address">
-      <h4 class="footer__heading">Ubicación</h4>
-      <p class="footer__location">
-        Calzada del Valle,<br>
-        frente al monumento a la amistad Italia‑México
-      </p>
-      <h4 class="footer__heading footer__heading--separated">Horario</h4>
-      <p class="footer__hours">Martes de 7 am a 9 am</p>
-    </address>
-
-    <!-- Redes sociales + contacto -->
-    <div class="footer__col footer__social" aria-label="Síguenos">
-      <h4 class="footer__heading">Síguenos</h4>
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-      </ul>
-      <div class="footer__contact">
-        <h4 class="footer__heading">Contacto</h4>
-        <p>Tel: 81 1080 6131</p>
-      </div>
-    </div>
-
-  </div>
-
-  <hr class="footer__divider">
-
-  <div class="footer__copy">
-    <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-
-<!-- ═══════════════════════════════════════════
-     SCRIPTS  (Leaflet primero, luego lógica)
-═══════════════════════════════════════════ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="CV_WebPage.js"></script>
-
- <!-- ============================================================
-       NAVBAR — Ahora fixed con transición scroll
+  <!-- ============================================================
+       BANNER DE PÁGINA (reemplaza al hero de imagen)
        ============================================================ -->
-  <nav class="navbar" id="mainNavbar">
-    <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="Coach.html">Coach</a></li>
-    </ul>
+  <div class="page-banner">
+    <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Ubicaciones</p>
+    <h1>Nuestras Ubicaciones</h1>
+  </div>
 
-    <div class="logo">
-      <img src="Img_CV/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
-      <p><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
+  <!-- ============================================================
+       SECCIÓN: MAPA INTERACTIVO
+       ============================================================ -->
+  <section id="ubicaciones" aria-label="Mapa de rutas y ubicaciones">
+
+    <p class="section-label">Rutas del club</p>
+    <h2 class="section-title">Explora las rutas</h2>
+    <p class="section-subtitle">Selecciona una ubicación para ver detalles, horarios y nivel de dificultad.</p>
+
+    <!-- Filtros -->
+    <div class="map-filters" role="group" aria-label="Filtrar por dificultad">
+      <button class="filter-btn active" data-filter="todas">Todas</button>
+      <button class="filter-btn" data-filter="facil">Fácil</button>
+      <button class="filter-btn" data-filter="intermedio">Intermedio</button>
+      <button class="filter-btn" data-filter="avanzado">Avanzado</button>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="ubicaciones.html">Ubicaciones</a></li>
-      <li><a href="Contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+    <div class="map-layout">
+      <!-- Panel lateral -->
+      <div class="locations-panel" id="locationsPanel" role="list" aria-label="Lista de ubicaciones"></div>
+
+      <!-- Mapa -->
+      <div class="map-container">
+        <div id="map" role="application" aria-label="Mapa interactivo de rutas"></div>
+
+        <!-- Popup flotante con info detallada -->
+        <div class="map-info-popup" id="mapInfoPopup" aria-live="polite">
+          <button class="popup-close" id="popupClose" aria-label="Cerrar información">×</button>
+          <div class="popup-badge-row">
+            <span class="diff-badge" id="popupDiff"></span>
+            <span style="font-size:0.75rem;color:var(--text-muted)" id="popupCategory"></span>
+          </div>
+          <p class="popup-title" id="popupTitle"></p>
+          <p class="popup-address" id="popupAddress"></p>
+          <div class="popup-stats">
+            <div class="popup-stat">
+              <span class="popup-stat-label">Distancia</span>
+              <span class="popup-stat-value" id="popupDist"></span>
+            </div>
+            <div class="popup-stat">
+              <span class="popup-stat-label">Dificultad</span>
+              <span class="popup-stat-value" id="popupDiffVal"></span>
+            </div>
+            <div class="popup-stat">
+              <span class="popup-stat-label">Horario</span>
+              <span class="popup-stat-value" id="popupHorario"></span>
+            </div>
+            <div class="popup-stat">
+              <span class="popup-stat-label">Día</span>
+              <span class="popup-stat-value" id="popupDia"></span>
+            </div>
+          </div>
+          <p class="popup-desc" id="popupDesc"></p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
+        <h4 class="footer__heading">Menú</h4>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="Coach.html" class="footer__link">Coach</a></li>
+          <li class="footer__item"><a href="index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
+          <li class="footer__item"><a href="index.html#Planes" class="footer__link">Planes</a></li>
+          <li class="footer__item"><a href="index.html#social" class="footer__link">Social</a></li>
+        </ul>
+      </div>
+
+      <address class="footer__col footer__address">
+        <h4 class="footer__heading">Ubicación</h4>
+        <p class="footer__location">
+          Calzada del Valle,<br>
+          frente al monumento a la amistad Italia‑México
+        </p>
+        <h4 class="footer__heading footer__heading--separated">Horario</h4>
+        <p class="footer__hours">Martes de 7 am a 9 am</p>
+      </address>
+
+      <div class="footer__col footer__social" aria-label="Síguenos">
+        <h4 class="footer__heading">Síguenos</h4>
+        <ul class="footer__social-list">
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__contact">
+          <h4 class="footer__heading">Contacto</h4>
+          <p>Tel: 81 1080 6131</p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__copy">
+      <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS — Leaflet primero, luego lógica del mapa
+       ============================================================ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="CV_WebPage.js"></script>
+
+  <!-- Navbar scroll behavior (idéntico al de index.html) -->
+  <script>
+    (function () {
+      const navbar = document.getElementById('mainNavbar');
+      const SCROLL_THRESHOLD = 60;
+
+      function onScroll() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.add('scrolled');
+        } else {
+          // En subpáginas sin hero de imagen, la navbar siempre muestra fondo sólido
+          navbar.classList.add('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 
 </body>
 </html>
