@@ -365,3 +365,36 @@
     }
   });
 })();
+
+
+/* ─────────────────────────────────────────
+   HAMBURGER MENU — todas las páginas
+───────────────────────────────────────── */
+(function initNavToggle() {
+  const toggle = document.getElementById('navToggle');
+  if (!toggle) return;
+
+  const navbar = document.getElementById('mainNavbar');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('nav-open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navbar.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('nav-open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target) && navbar.classList.contains('nav-open')) {
+      navbar.classList.remove('nav-open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
