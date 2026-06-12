@@ -348,6 +348,16 @@
   to { transform: rotate(360deg); }
 }
 
+/* ── Toast estado error ── */
+.form-success-toast.toast--error {
+  background: #FDEEEE;
+  border-left-color: #E24B4A;
+}
+
+.form-success-toast.toast--error .toast-title { color: #7A1F1F; }
+.form-success-toast.toast--error .toast-text  { color: #C0392B; }
+.form-success-toast.toast--error .toast-icon  { color: #C0392B; }
+
 /* ── Toast de éxito ── */
 .form-success-toast {
   display: flex;

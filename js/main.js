@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   CV_WebPage.js  –  Club Corredores del Valle
+   main.js  –  Club Corredores del Valle
    Incluye: lógica del mapa interactivo + validación de contacto
    Cada bloque se activa solo si sus elementos existen en el DOM.
 ═══════════════════════════════════════════════════════════ */
@@ -8,7 +8,7 @@
    MAPA INTERACTIVO  (ubicaciones.html)
 ───────────────────────────────────────── */
 (function initMap() {
-  if (!document.getElementById('map')) return; // guard: solo corre en ubicaciones.html
+  if (!document.getElementById('map')) return;
 
   const LOCATIONS = [
     {
@@ -78,7 +78,6 @@
     },
   ];
 
-  /* Inicialización del mapa */
   const map = L.map('map', {
     center: [25.6640, -100.3900],
     zoom: 13,
@@ -91,7 +90,6 @@
     maxZoom: 19,
   }).addTo(map);
 
-  /* Marcadores personalizados */
   const DIFF_ICON = {
     facil:      { class: 'marker-facil',      icon: 'fa-person-running' },
     intermedio: { class: 'marker-intermedio', icon: 'fa-route'          },
@@ -111,12 +109,10 @@
     });
   }
 
-  /* Referencias DOM */
   const panel      = document.getElementById('locationsPanel');
   const popup      = document.getElementById('mapInfoPopup');
   const popupClose = document.getElementById('popupClose');
 
-  /* Mostrar info en popup */
   function openPopup(loc) {
     const labels = { facil: 'Fácil', intermedio: 'Intermedio', avanzado: 'Avanzado' };
     document.getElementById('popupDiff').textContent     = labels[loc.dificultad] || loc.dificultad;
@@ -134,7 +130,6 @@
 
   popupClose.addEventListener('click', () => popup.classList.remove('visible'));
 
-  /* Renderizar lista + marcadores */
   let markers = [];
 
   function renderLocations(filter) {
@@ -203,7 +198,6 @@
     }
   }
 
-  /* Filtros */
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -218,25 +212,24 @@
 
 
 /* ─────────────────────────────────────────
-   FORMULARIO DE CONTACTO  (Contacto.html)
+   FORMULARIO DE CONTACTO  (contacto.html)
+   Envío real via Web3Forms — web3forms.com
 ───────────────────────────────────────── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
-  if (!form) return; // guard: solo corre en Contacto.html
+  if (!form) return;
 
   const btnSubmit = document.getElementById('btnSubmit');
   const toast     = document.getElementById('successToast');
   const charCount = document.getElementById('char-count');
   const msgArea   = document.getElementById('mensaje');
 
-  /* Contador de caracteres */
   msgArea.addEventListener('input', () => {
     const len = msgArea.value.length;
     charCount.textContent = `${len} / 500 caracteres`;
     charCount.classList.toggle('warn', len > 400);
   });
 
-  /* Reglas de validación */
   const RULES = {
     nombre:     { required: true, minLen: 3,  msg: { required: 'El nombre es obligatorio.',          minLen: 'Escribe al menos 3 caracteres.' } },
     telefono:   { required: true, pattern: /^[\d\s\-()+]{7,15}$/, msg: { required: 'El teléfono es obligatorio.', pattern: 'Número inválido. Ej: 81 1234 5678' } },
@@ -283,7 +276,6 @@
     return true;
   }
 
-  /* Validación al salir del campo */
   Object.keys(RULES).forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -292,7 +284,6 @@
     if (el.tagName === 'SELECT') el.addEventListener('change', () => validateField(id));
   });
 
-  /* Validación en tiempo real si ya tiene error */
   ['nombre', 'telefono', 'email', 'mensaje'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -301,13 +292,33 @@
     });
   });
 
-  /* Envío del formulario */
+  function showToast(success) {
+    const title = toast.querySelector('.toast-title');
+    const text  = toast.querySelector('.toast-text');
+    const icon  = toast.querySelector('.toast-icon i');
+
+    if (success) {
+      toast.classList.remove('toast--error');
+      title.textContent = '¡Mensaje enviado!';
+      text.textContent  = 'Gracias por escribirnos. Nuestra entrenadora te contactará pronto.';
+      icon.className    = 'fa-solid fa-circle-check';
+    } else {
+      toast.classList.add('toast--error');
+      title.textContent = 'Error al enviar';
+      text.textContent  = 'Hubo un problema. Por favor intenta de nuevo o escríbenos por WhatsApp.';
+      icon.className    = 'fa-solid fa-circle-exclamation';
+    }
+
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show', 'toast--error'), 6000);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const valid = Object.keys(RULES).map(id => validateField(id)).every(Boolean);
     if (!valid) {
-      const firstErr = form.querySelector('.error, [aria-invalid="true"]');
+      const firstErr = form.querySelector('.error');
       if (firstErr) firstErr.focus();
       return;
     }
@@ -315,21 +326,42 @@
     btnSubmit.classList.add('loading');
     btnSubmit.disabled = true;
 
-    await new Promise(r => setTimeout(r, 1800));
+    try {
+      /* Obtén tu clave gratuita en web3forms.com y reemplaza el valor de access_key */
+      const payload = {
+        access_key:  '3ce4459e-d66f-4352-9d04-0423932d7bb3',
+        from_name:   'Club Corredores del Valle – Sitio Web',
+        to_email:    'echch73@gmail.com',
+        nombre:   document.getElementById('nombre').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
+        email:    document.getElementById('email').value.trim(),
+        asunto:   document.getElementById('asunto').value,
+        mensaje:  document.getElementById('mensaje').value.trim(),
+      };
 
-    btnSubmit.classList.remove('loading');
-    btnSubmit.disabled = false;
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+      const data = await res.json();
 
-    toast.classList.add('show');
-    form.reset();
-    charCount.textContent = '0 / 500 caracteres';
+      if (!data.success) throw new Error(data.message || 'Error en el servidor.');
 
-    Object.keys(RULES).forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.classList.remove('success', 'error');
-      clearError(id);
-    });
+      showToast(true);
+      form.reset();
+      charCount.textContent = '0 / 500 caracteres';
+      Object.keys(RULES).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('success', 'error');
+        clearError(id);
+      });
 
-    setTimeout(() => toast.classList.remove('show'), 6000);
+    } catch (_) {
+      showToast(false);
+    } finally {
+      btnSubmit.classList.remove('loading');
+      btnSubmit.disabled = false;
+    }
   });
 })();

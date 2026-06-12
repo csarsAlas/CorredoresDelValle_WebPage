@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubicaciones — Corredores del Valle</title>
-  <!-- Estilos globales del sitio (navbar, footer, tokens) -->
-  <link rel="stylesheet" href="corredoresValle.css">
-  <!-- Estilos específicos de esta página -->
-  <link rel="stylesheet" href="CSS_Corredores/Ubicacion.css">
+  <meta name="description" content="Explora las rutas y ubicaciones del Club Corredores del Valle en Monterrey. Mapa interactivo con horarios y niveles de dificultad.">
+  <title>Ubicaciones — Club Corredores del Valle</title>
+  <link rel="icon" type="image/png" href="../assets/logos/Logo.png">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/ubicacion.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
@@ -19,18 +19,18 @@
        ============================================================ -->
   <nav class="navbar scrolled" id="mainNavbar">
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="Coach.html">Coach</a></li>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="./coach.html">Coach</a></li>
     </ul>
 
     <div class="logo">
-      <img src="Img_CV/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
-      <p><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
+      <img src="../assets/logos/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
+      <p><a href="../index.html" class="link-reset">Club Corredores del Valle</a></p>
     </div>
 
     <ul class="nav-links">
-      <li><a href="ubicaciones.html" class="nav-active">Ubicaciones</a></li>
-      <li><a href="Contacto.html">Contacto</a></li>
+      <li><a href="./ubicaciones.html" class="nav-active">Ubicaciones</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
     </ul>
   </nav>
 
@@ -38,7 +38,7 @@
        BANNER DE PÁGINA (reemplaza al hero de imagen)
        ============================================================ -->
   <div class="page-banner">
-    <p class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Ubicaciones</p>
+    <p class="breadcrumb"><a href="../index.html">Inicio</a> &nbsp;/&nbsp; Ubicaciones</p>
     <h1>Nuestras Ubicaciones</h1>
   </div>
 
@@ -110,10 +110,10 @@
       <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
         <h4 class="footer__heading">Menú</h4>
         <ul class="footer__list">
-          <li class="footer__item"><a href="Coach.html" class="footer__link">Coach</a></li>
-          <li class="footer__item"><a href="index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
-          <li class="footer__item"><a href="index.html#Planes" class="footer__link">Planes</a></li>
-          <li class="footer__item"><a href="index.html#social" class="footer__link">Social</a></li>
+          <li class="footer__item"><a href="./coach.html" class="footer__link">Coach</a></li>
+          <li class="footer__item"><a href="../index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
+          <li class="footer__item"><a href="../index.html#Planes" class="footer__link">Planes</a></li>
+          <li class="footer__item"><a href="./comunidad.html" class="footer__link">Comunidad</a></li>
         </ul>
       </div>
 
@@ -165,7 +165,7 @@
        SCRIPTS — Leaflet primero, luego lógica del mapa
        ============================================================ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script src="CV_WebPage.js"></script>
+  <script src="../js/main.js"></script>
 
   <!-- Navbar scroll behavior (idéntico al de index.html) -->
   <script>

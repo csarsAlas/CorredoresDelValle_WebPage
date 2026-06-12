@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad</title>
-    <link rel="stylesheet" href="corredoresValle.css">
-    <link rel="stylesheet" href="CSS_Corredores/Coach.css">
+    <meta name="description" content="Comunidad del Club Corredores del Valle. Momentos, eventos y la familia que corre junta.">
+    <title>Comunidad — Club Corredores del Valle</title>
+    <link rel="icon" type="image/png" href="../assets/logos/Logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/coach.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-     <!-- Header -->
-<header class="hero">
-  <img src="Img_CV/corredores_Header.webp" alt="hero" class="hero-img">
+  <nav class="navbar" id="mainNavbar">
+    <ul class="nav-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="./coach.html">Coach</a></li>
+    </ul>
 
-  <nav class="navbar">
-  <ul class="nav-links left">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="#">Coach</a></li>
-  </ul>
+    <div class="logo">
+      <img src="../assets/logos/Logo.png" alt="Logo Club Corredores del Valle" class="Logo_img">
+      <p><a href="../index.html" class="link-reset">Club Corredores del Valle</a></p>
+    </div>
 
-  <div class="logo">
-    <img src="Img_CV/Logo.png" alt="Logo" class="Logo_img">
-    <p class="txt_lOGO"><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
-  </div>
-
-
-  <ul class="nav-links right">
-    <li><a href="#ubicaciones">Ubicaciones</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+    <ul class="nav-links">
+      <li><a href="./ubicaciones.html">Ubicaciones</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
   </nav>
 
-  <!-- HERO CONTENT -->
-
-  <div class="hero-content">
-  </div>
-</header>
+  <!-- Header -->
+  <header class="hero">
+    <img src="../assets/images/corredores_Header.webp" alt="Comunidad Corredores del Valle" class="hero-img">
+    <div class="hero-content"></div>
+  </header>
 
 
 
@@ -52,10 +49,10 @@
     <div class="footer__col footer__nav" aria-label="Enlaces de pie de página">
       <h4 class="footer__heading">Menú</h4>
       <ul class="footer__list">
-        <li class="footer__item"><a href="#" class="footer__link">Coach</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">¿Quiénes somos?</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Planes</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Social</a></li>
+        <li class="footer__item"><a href="./coach.html" class="footer__link">Coach</a></li>
+        <li class="footer__item"><a href="../index.html#sobre-nosotros" class="footer__link">¿Quiénes somos?</a></li>
+        <li class="footer__item"><a href="../index.html#Planes" class="footer__link">Planes</a></li>
+        <li class="footer__item"><a href="./comunidad.html" class="footer__link">Comunidad</a></li>
       </ul>
     </div>
 
@@ -105,6 +102,22 @@
     <p>&copy; 2025 Club Corredores del Valle. Todos los derechos reservados.</p>
   </div>
 </footer>
-    
+
+  <script>
+    (function () {
+      const navbar = document.getElementById('mainNavbar');
+      const SCROLL_THRESHOLD = 60;
+      function onScroll() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
 </body>
 </html>
