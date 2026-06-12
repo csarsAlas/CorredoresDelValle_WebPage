@@ -439,4 +439,21 @@
   .contact-form-card {
     padding: 1.75rem 1.25rem;
   }
+
+  .form-input,
+  .form-select {
+    min-height: 44px;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .btn-submit {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-info-title { font-size: 1.15rem; }
+  .contact-detail-label { font-size: 0.72rem; }
+  .contact-detail-value { font-size: 0.85rem; }
 }

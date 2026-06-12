@@ -40,10 +40,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* =====================================================
@@ -712,6 +717,14 @@ hr.fuerte {
 /* =====================================================
    RESPONSIVE
    ===================================================== */
+
+/* ── 1024px: tablet landscape / laptop estrecho ── */
+@media (max-width: 1024px) {
+  .nav-links a {
+    padding: 1rem 1.75rem;
+  }
+}
+
 @media (max-width: 900px) {
   .father_img_container,
   .father_img_container_ubs {
@@ -928,6 +941,22 @@ hr.fuerte {
 
   .nav-links a::after    { display: none; }
   .nav-links li:last-child a { border-bottom: none; }
+
+  /* Touch targets */
+  .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .infoPlan li a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 /* =====================================================

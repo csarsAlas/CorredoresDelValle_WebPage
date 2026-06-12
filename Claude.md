@@ -64,22 +64,68 @@ Crear una experiencia uniforme en todo el sitio.
 
 ---
 
-## Responsive
+# Responsive Design
 
-Verificar:
+El sitio debe ofrecer una experiencia consistente y profesional en todos los dispositivos y resoluciones.
 
-* Mobile.
-* Tablet.
-* Laptop.
-* Desktop.
+## Dispositivos Objetivo
 
-Corregir:
+Verificar y adaptar el diseño para:
 
-* Desbordamientos horizontales.
-* Elementos cortados.
-* Textos fuera de pantalla.
-* Imágenes deformadas.
-* Botones inaccesibles.
+* Smartphones pequeños.
+* Smartphones modernos.
+* Tablets en orientación vertical y horizontal.
+* Laptops.
+* Monitores de escritorio.
+* Pantallas grandes y ultrawide.
+
+## Requisitos
+
+* Priorizar una experiencia Mobile First.
+* Evitar cualquier tipo de scroll horizontal.
+* Mantener una navegación clara e intuitiva.
+* Garantizar una correcta visualización del contenido en cualquier resolución.
+* Mantener la coherencia visual respecto a `index.html`.
+* Preservar la identidad visual y el branding existente.
+
+## Correcciones Permitidas
+
+Corregir cuando sea necesario:
+
+* Elementos desalineados.
+* Espaciados inconsistentes.
+* Componentes que rompan el layout.
+* Imágenes deformadas o desproporcionadas.
+* Texto demasiado pequeño o difícil de leer.
+* Botones difíciles de interactuar en dispositivos táctiles.
+* Secciones con exceso o falta de espacio.
+* Problemas de flexbox o grid.
+* Componentes que se superpongan entre sí.
+
+## Menú y Navegación
+
+* Adaptar correctamente el menú para dispositivos móviles.
+* Mantener accesibles todas las opciones de navegación.
+* Garantizar una experiencia fluida tanto con mouse como con pantalla táctil.
+
+## Contenido
+
+* Mantener una jerarquía visual clara.
+* Evitar líneas de texto excesivamente largas.
+* Garantizar una correcta lectura en cualquier tamaño de pantalla.
+* Adaptar imágenes, tarjetas y secciones informativas de manera proporcional.
+
+## Restricciones
+
+* No alterar el branding principal.
+* No modificar colores o tipografías sin justificación.
+* No eliminar contenido importante.
+* No romper funcionalidades existentes.
+* No realizar cambios visuales radicales únicamente por razones responsive.
+
+## Resultado Esperado
+
+El sitio debe verse profesional, moderno, ordenado y completamente funcional en cualquier dispositivo, manteniendo la misma identidad visual, coherencia de diseño y calidad de experiencia que la versión de escritorio.
 
 ---
 

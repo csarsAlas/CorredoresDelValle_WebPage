@@ -394,9 +394,38 @@
     padding-right: 1.25rem;
   }
 
+  #map {
+    height: 380px;
+  }
+
+  .locations-panel {
+    max-height: 240px;
+  }
+
+  .filter-btn {
+    min-height: 44px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.82rem;
+  }
+
   .map-info-popup {
     width: calc(100% - 2rem);
     right: 1rem;
     bottom: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #map {
+    height: 300px;
+  }
+
+  .map-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.78rem;
   }
 }
