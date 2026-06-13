@@ -13,74 +13,93 @@
   const LOCATIONS = [
     {
       id: 1,
-      name: 'Punto de reunión – Monumento Italia‑México',
-      address: 'Calzada del Valle, frente al Monumento Italia‑México, San Pedro',
-      category: 'Punto de partida',
-      dificultad: 'facil',
-      distancia: '5 km',
+      name: 'Monumento Italia‑México',
+      address: 'Calzada del Valle frente al Monumento Italia‑México, San Pedro Garza García',
+      category: 'ruta',
+      distancia: '~15 km (Calzada del Valle)',
       horario: '7:00 – 9:00 am',
-      dia: 'Martes',
-      descripcion: 'Punto de encuentro oficial del club. Ideal para corredores de todos los niveles; aquí inician la mayoría de las sesiones grupales.',
+      dia: 'Depende de la coach',
+      descripcion: 'Punto de reunión del club. Rodajes sobre Calzada del Valle para trabajar resistencia y técnica de carrera.',
       lat: 25.6572,
       lng: -100.4020,
     },
     {
       id: 2,
-      name: 'Ruta Valle – Circuito Largo',
-      address: 'Calzada del Valle al Parque Humberto Lobo, San Pedro',
-      category: 'Ruta',
-      dificultad: 'intermedio',
-      distancia: '10 km',
-      horario: '6:30 – 9:00 am',
-      dia: 'Jueves',
-      descripcion: 'Circuito que recorre Calzada del Valle hasta Parque Humberto Lobo. Terreno plano con algunas subidas moderadas. Recomendado para corredores con base de 10 km.',
-      lat: 25.6608,
-      lng: -100.3970,
+      name: 'Pista UDEM',
+      address: 'Universidad de Monterrey, San Pedro Garza García, N.L.',
+      category: 'pista',
+      distancia: 'Pista de 400 m',
+      horario: '7:00 – 9:00 am',
+      dia: 'Depende de la coach',
+      descripcion: 'Pista atlética certificada para series, velocidad y trabajo de técnica de carrera.',
+      lat: 25.6627,
+      lng: -100.4279,
     },
     {
       id: 3,
-      name: 'Ruta San Pedro – Subida Los Pinos',
-      address: 'Av. Morones Prieto hacia Cerro del Topo Chico, Monterrey',
-      category: 'Ruta',
-      dificultad: 'avanzado',
-      distancia: '18 km',
+      name: 'Parque La Huasteca',
+      address: 'Parque La Huasteca, Santa Catarina, N.L.',
+      category: 'montana',
+      distancia: 'Rutas de 5 a 20+ km',
       horario: '6:00 – 9:30 am',
-      dia: 'Sábado',
-      descripcion: 'Ruta de entrenamiento avanzado con ganancia de elevación significativa. Ideal para preparar trail o maratón. Solo para corredores experimentados.',
-      lat: 25.6690,
-      lng: -100.3890,
+      dia: 'Depende de la coach',
+      descripcion: 'Terreno de montaña para trabajar fuerza, elevación y adaptación al trail.',
+      lat: 25.6365,
+      lng: -100.5092,
     },
     {
       id: 4,
-      name: 'Parque La Pastora – Sesión 5k',
-      address: 'Parque La Pastora, Guadalupe, N.L.',
-      category: 'Sesión especial',
-      dificultad: 'facil',
-      distancia: '5 km',
-      horario: '7:30 – 9:00 am',
-      dia: 'Domingo',
-      descripcion: 'Sesión dominical en el Parque La Pastora. Ambiente familiar, ideal para principiantes y para quienes buscan una carrera tranquila de fin de semana.',
-      lat: 25.6720,
-      lng: -100.3760,
+      name: 'Parque Fundidora',
+      address: 'Parque Fundidora, Monterrey, N.L.',
+      category: 'ruta',
+      distancia: '~3 a 10 km por circuito',
+      horario: '6:45 – 9:00 am',
+      dia: 'Depende de la coach',
+      descripcion: 'Circuito urbano plano para series de velocidad y rodajes de ritmo.',
+      lat: 25.6791,
+      lng: -100.2954,
     },
     {
       id: 5,
-      name: 'Ruta Fundidora – Circuito 10k',
-      address: 'Parque Fundidora, Monterrey, N.L.',
-      category: 'Ruta',
-      dificultad: 'intermedio',
-      distancia: '10 km',
-      horario: '6:45 – 9:00 am',
-      dia: 'Miércoles',
-      descripcion: 'Circuito dentro del Parque Fundidora. Terreno llano y bien iluminado. Excelente para series y trabajo de velocidad.',
-      lat: 25.6780,
-      lng: -100.2980,
+      name: 'Parque Ecológico Chipinque',
+      address: 'Parque Ecológico Chipinque, San Pedro Garza García, N.L.',
+      category: 'montana',
+      distancia: 'Senderos de 5 a 25+ km',
+      horario: '6:00 – 9:30 am',
+      dia: 'Depende de la coach',
+      descripcion: 'Senderos de sierra para trabajar fuerza, resistencia y terreno técnico de trail.',
+      lat: 25.6167,
+      lng: -100.3583,
+    },
+    {
+      id: 6,
+      name: 'Parque España',
+      address: 'Parque España, Col. Mitras, Monterrey, N.L.',
+      category: 'ruta',
+      distancia: '~1 a 5 km por circuito',
+      horario: '7:00 – 9:00 am',
+      dia: 'Depende de la coach',
+      descripcion: 'Parque urbano para rodajes suaves y recuperación activa.',
+      lat: 25.6830,
+      lng: -100.3607,
+    },
+    {
+      id: 7,
+      name: 'Pista CARE',
+      address: 'Deportivo CARE, San Pedro Garza García, N.L.',
+      category: 'pista',
+      distancia: 'Pista de 400 m',
+      horario: '7:00 – 9:00 am',
+      dia: 'Depende de la coach',
+      descripcion: 'Pista atlética para velocidad, series y trabajo de ritmo específico.',
+      lat: 25.6615,
+      lng: -100.3721,
     },
   ];
 
   const map = L.map('map', {
-    center: [25.6640, -100.3900],
-    zoom: 13,
+    center: [25.650, -100.400],
+    zoom: 11,
     zoomControl: true,
     scrollWheelZoom: false,
   });
@@ -90,14 +109,17 @@
     maxZoom: 19,
   }).addTo(map);
 
-  const DIFF_ICON = {
-    facil:      { class: 'marker-facil',      icon: 'fa-person-running' },
-    intermedio: { class: 'marker-intermedio', icon: 'fa-route'          },
-    avanzado:   { class: 'marker-avanzado',   icon: 'fa-mountain'       },
+  const CAT_ICON = {
+    pista:   { class: 'marker-pista',   icon: 'fa-person-running' },
+    ruta:    { class: 'marker-ruta',    icon: 'fa-route'          },
+    montana: { class: 'marker-montana', icon: 'fa-mountain'       },
   };
 
-  function createIcon(dif) {
-    const cfg = DIFF_ICON[dif] || DIFF_ICON.facil;
+  const CAT_LABELS = { pista: 'Pista', ruta: 'Ruta', montana: 'Montaña' };
+  const CAT_ICONS  = { pista: 'fa-person-running', ruta: 'fa-route', montana: 'fa-mountain' };
+
+  function createIcon(cat) {
+    const cfg = CAT_ICON[cat] || CAT_ICON.ruta;
     return L.divIcon({
       html: `<div class="custom-marker ${cfg.class}">
                <i class="fa-solid ${cfg.icon}" style="color:white;font-size:.8rem"></i>
@@ -114,14 +136,13 @@
   const popupClose = document.getElementById('popupClose');
 
   function openPopup(loc) {
-    const labels = { facil: 'Fácil', intermedio: 'Intermedio', avanzado: 'Avanzado' };
-    document.getElementById('popupDiff').textContent     = labels[loc.dificultad] || loc.dificultad;
-    document.getElementById('popupDiff').className       = `diff-badge ${loc.dificultad}`;
-    document.getElementById('popupCategory').textContent = loc.category;
+    const label = CAT_LABELS[loc.category] || loc.category;
+    document.getElementById('popupDiff').textContent     = label;
+    document.getElementById('popupDiff').className       = `diff-badge ${loc.category}`;
+    document.getElementById('popupCategory').textContent = '';
     document.getElementById('popupTitle').textContent    = loc.name;
     document.getElementById('popupAddress').textContent  = loc.address;
     document.getElementById('popupDist').textContent     = loc.distancia;
-    document.getElementById('popupDiffVal').textContent  = labels[loc.dificultad];
     document.getElementById('popupHorario').textContent  = loc.horario;
     document.getElementById('popupDia').textContent      = loc.dia;
     document.getElementById('popupDesc').textContent     = loc.descripcion;
@@ -139,10 +160,10 @@
 
     const filtered = filter === 'todas'
       ? LOCATIONS
-      : LOCATIONS.filter(l => l.dificultad === filter);
+      : LOCATIONS.filter(l => l.category === filter);
 
     filtered.forEach(loc => {
-      const mk = L.marker([loc.lat, loc.lng], { icon: createIcon(loc.dificultad) })
+      const mk = L.marker([loc.lat, loc.lng], { icon: createIcon(loc.category) })
         .addTo(map)
         .on('click', () => {
           openPopup(loc);
@@ -156,21 +177,20 @@
       card.setAttribute('role', 'listitem');
       card.setAttribute('data-id', loc.id);
       card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', `${loc.name}, ${loc.dificultad}, ${loc.distancia}`);
+      card.setAttribute('aria-label', `${loc.name}, ${CAT_LABELS[loc.category] || loc.category}, ${loc.distancia}`);
 
-      const diffLabel = { facil: 'Fácil', intermedio: 'Intermedio', avanzado: 'Avanzado' }[loc.dificultad];
-      const diffIco   = { facil: 'fa-person-running', intermedio: 'fa-route', avanzado: 'fa-mountain' }[loc.dificultad];
+      const catLabel = CAT_LABELS[loc.category] || loc.category;
+      const catIco   = CAT_ICONS[loc.category]  || 'fa-location-dot';
 
       card.innerHTML = `
-        <div class="loc-icon ${loc.dificultad}">
-          <i class="fa-solid ${diffIco}" aria-hidden="true"></i>
+        <div class="loc-icon ${loc.category}">
+          <i class="fa-solid ${catIco}" aria-hidden="true"></i>
         </div>
         <div class="loc-info">
           <p class="loc-name">${loc.name}</p>
           <div class="loc-meta">
-            <span class="diff-badge ${loc.dificultad}">${diffLabel}</span>
+            <span class="diff-badge ${loc.category}">${catLabel}</span>
             <span>${loc.distancia}</span>
-            <span>${loc.dia}</span>
           </div>
         </div>
       `;

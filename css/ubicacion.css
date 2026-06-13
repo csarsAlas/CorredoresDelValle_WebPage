@@ -141,9 +141,9 @@
   border-color: var(--navy);
 }
 
-.filter-btn[data-filter="facil"].active      { background: #1D9E75; border-color: #1D9E75; }
-.filter-btn[data-filter="intermedio"].active { background: var(--blue-mid); border-color: var(--blue-mid); }
-.filter-btn[data-filter="avanzado"].active   { background: var(--orange); border-color: var(--orange); }
+.filter-btn[data-filter="pista"].active   { background: #1D9E75; border-color: #1D9E75; }
+.filter-btn[data-filter="ruta"].active    { background: var(--blue-mid); border-color: var(--blue-mid); }
+.filter-btn[data-filter="montana"].active { background: var(--orange); border-color: var(--orange); }
 
 /* ── Layout mapa + panel ── */
 .map-layout {
@@ -200,9 +200,9 @@
   margin-top: 2px;
 }
 
-.loc-icon.facil      { background: #E1F5EE; color: #0F6E56; }
-.loc-icon.intermedio { background: #e8ecff; color: var(--blue-mid); }
-.loc-icon.avanzado   { background: #FAECE7; color: #993C1D; }
+.loc-icon.pista   { background: #E1F5EE; color: #0F6E56; }
+.loc-icon.ruta    { background: #e8ecff; color: var(--blue-mid); }
+.loc-icon.montana { background: #FAECE7; color: #993C1D; }
 
 .loc-info { flex: 1; min-width: 0; }
 
@@ -234,9 +234,9 @@
   letter-spacing: 0.03em;
 }
 
-.diff-badge.facil      { background: #E1F5EE; color: #0F6E56; }
-.diff-badge.intermedio { background: #e8ecff; color: var(--blue-mid); }
-.diff-badge.avanzado   { background: #FAECE7; color: #993C1D; }
+.diff-badge.pista   { background: #E1F5EE; color: #0F6E56; }
+.diff-badge.ruta    { background: #e8ecff; color: var(--blue-mid); }
+.diff-badge.montana { background: #FAECE7; color: #993C1D; }
 
 /* ── Contenedor del mapa ── */
 .map-container {
@@ -326,6 +326,10 @@
   padding: 0.45rem 0.6rem;
 }
 
+.popup-stat--wide {
+  grid-column: 1 / -1;
+}
+
 .popup-stat-label {
   font-size: 0.68rem;
   color: var(--text-muted);
@@ -365,9 +369,9 @@
   font-size: 0.85rem;
 }
 
-.marker-facil      { background: #1D9E75; }
-.marker-intermedio { background: var(--blue-mid); }
-.marker-avanzado   { background: var(--orange); }
+.marker-pista   { background: #1D9E75; }
+.marker-ruta    { background: var(--blue-mid); }
+.marker-montana { background: var(--orange); }
 
 /* =====================================================
    RESPONSIVE

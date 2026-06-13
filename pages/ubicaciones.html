@@ -59,14 +59,14 @@
 
     <p class="section-label">Rutas del club</p>
     <h2 class="section-title">Explora las rutas</h2>
-    <p class="section-subtitle">Selecciona una ubicación para ver detalles, horarios y nivel de dificultad.</p>
+    <p class="section-subtitle">Selecciona una ubicación para ver detalles, horarios y tipo de entrenamiento.</p>
 
     <!-- Filtros -->
-    <div class="map-filters" role="group" aria-label="Filtrar por dificultad">
+    <div class="map-filters" role="group" aria-label="Filtrar por tipo">
       <button class="filter-btn active" data-filter="todas">Todas</button>
-      <button class="filter-btn" data-filter="facil">Fácil</button>
-      <button class="filter-btn" data-filter="intermedio">Intermedio</button>
-      <button class="filter-btn" data-filter="avanzado">Avanzado</button>
+      <button class="filter-btn" data-filter="pista">Pista</button>
+      <button class="filter-btn" data-filter="ruta">Ruta</button>
+      <button class="filter-btn" data-filter="montana">Montaña</button>
     </div>
 
     <div class="map-layout">
@@ -92,15 +92,11 @@
               <span class="popup-stat-value" id="popupDist"></span>
             </div>
             <div class="popup-stat">
-              <span class="popup-stat-label">Dificultad</span>
-              <span class="popup-stat-value" id="popupDiffVal"></span>
-            </div>
-            <div class="popup-stat">
               <span class="popup-stat-label">Horario</span>
               <span class="popup-stat-value" id="popupHorario"></span>
             </div>
-            <div class="popup-stat">
-              <span class="popup-stat-label">Día</span>
+            <div class="popup-stat popup-stat--wide">
+              <span class="popup-stat-label">Días</span>
               <span class="popup-stat-value" id="popupDia"></span>
             </div>
           </div>
