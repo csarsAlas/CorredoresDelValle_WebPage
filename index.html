@@ -26,10 +26,16 @@
       <p><a href="index.html" class="link-reset">Club Corredores del Valle</a></p>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="./pages/ubicaciones.html">Ubicaciones</a></li>
-      <li><a href="./pages/contacto.html">Contacto</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./pages/ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="./pages/contacto.html">Contacto</a></li>
+      </ul>
+
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Cambiar a modo oscuro">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
 
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -74,7 +80,7 @@
         </div>
         <h1>Trail y Ultras</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi, omnis neque consectetur reprehenderit voluptate est blanditiis nobis.</p>
-        <a href="#">Más información</a>
+        <a href="./pages/trail.html">Más información</a>
       </div>
 
       <div class="carreras_container_img">
@@ -164,20 +170,6 @@
           <a href="#">Ver más</a>
         </article>
 
-        <article class="maraton-card">
-          <img src="./assets/images/PRUEBA.avif" alt="Fuerza para corredores">
-          <h2>Fuerza para corredores</h2>
-          <p>Una carrera icónica con historias que van más allá del asfalto.</p>
-          <a href="#">Ver más</a>
-        </article>
-
-        <article class="maraton-card">
-          <img src="./assets/images/PRUEBA.avif" alt="Maratón Powerade">
-          <h2>Maratón Powerade</h2>
-          <p>Un vistazo al corazón de la ciudad y al espíritu de sus corredores.</p>
-          <a href="#">Ver más</a>
-        </article>
-
       </div>
     </div>
   </section>
@@ -193,28 +185,40 @@
   </div>
 
   <section class="closing_divs">
-    <div class="father_img_container_ubs">
+    <div class="viaje-grid">
 
-      <div>
-        <img src="" alt="Mundial Málaga">
-        <h1>Mundial Málaga</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi.</p>
-        <a href="#">Ver más</a>
-      </div>
+      <article class="viaje-card">
+        <div class="viaje-card__media viaje-card__media--gradient">
+          <i class="fa-solid fa-trophy viaje-card__icon" aria-hidden="true"></i>
+        </div>
+        <div class="viaje-card__body">
+          <h2 class="viaje-card__title">Mundial Málaga</h2>
+          <p class="viaje-card__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ipsam explicabo quam in minima unde. Nihil, unde aliquam! Corrupti sequi obcaecati commodi.</p>
+          <a href="#" class="viaje-card__link">Ver más &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
 
-      <div>
-        <img src="./assets/images/corredores_Header.webp" alt="Comunidad Corredores del Valle">
-        <h1>Comunidad</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem.</p>
-        <a href="./pages/comunidad.html">Ver más</a>
-      </div>
+      <article class="viaje-card">
+        <div class="viaje-card__media">
+          <img src="./assets/images/corredores_Header.webp" alt="Comunidad Corredores del Valle">
+        </div>
+        <div class="viaje-card__body">
+          <h2 class="viaje-card__title">Comunidad</h2>
+          <p class="viaje-card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta voluptatum repellat cupiditate error, ad ea illum maxime vero voluptate unde sequi exercitationem.</p>
+          <a href="./pages/comunidad.html" class="viaje-card__link">Ver más &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
 
-      <div>
-        <img src="" alt="Redes Sociales">
-        <h1>Social</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora.</p>
-        <a href="#">Ver más</a>
-      </div>
+      <article class="viaje-card">
+        <div class="viaje-card__media viaje-card__media--gradient">
+          <i class="fa-solid fa-share-nodes viaje-card__icon" aria-hidden="true"></i>
+        </div>
+        <div class="viaje-card__body">
+          <h2 class="viaje-card__title">Social</h2>
+          <p class="viaje-card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maxime dolor adipisci, inventore voluptatibus eum facere illo eius quae, tempore itaque amet ea tempora.</p>
+          <a href="#" class="viaje-card__link">Ver más &nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
 
     </div>
   </section>

@@ -175,3 +175,22 @@
   }
 }
 
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
+.dark-mode .seccion_objetivo h4 { color: #93c5fd; }
+.dark-mode .seccion_objetivo p  { color: #94a3b8; }
+
+.dark-mode .trayectoria_container,
+.dark-mode .logros_container,
+.dark-mode .certificaciones_container {
+  background-color: #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .trayectoria_container h3,
+.dark-mode .right_containers h3 { color: #e2e8f0; }
+
+.dark-mode .trayectoria_container p,
+.dark-mode .right_containers p  { color: #94a3b8; }
+

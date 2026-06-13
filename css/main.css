@@ -1,6 +1,5 @@
 /* =====================================================
    CORREDORES DEL VALLE — Stylesheet
-   Versión optimizada y limpia
    ===================================================== */
 
 /* --- FUENTES (deduplicadas) --- */
@@ -14,10 +13,10 @@
 
 /* --- TOKENS DE COLOR --- */
 :root {
-  --color-brand-dark:    #001f3f;   /* Azul marino (footer) */
-  --color-brand-mid:     #283594;   /* Azul medio */
-  --color-brand-light:   #e8eaf6;   /* Azul muy suave para hover bg */
-  --color-accent:        rgba(227, 77, 22, 0.70); /* Naranja (planes) */
+  --color-brand-dark:    #001f3f;   
+  --color-brand-mid:     #283594;   
+  --color-brand-light:   #e8eaf6;   
+  --color-accent:        rgba(227, 77, 22, 0.70); 
   --color-accent-soft:   rgba(213, 146, 121, 0.62);
   --color-white:         #ffffff;
   --color-text-dark:     #2e2e2e;
@@ -25,7 +24,7 @@
   --color-divider-soft:  rgba(0, 0, 0, 0.12);
   --color-divider-hard:  rgba(0, 0, 0, 0.40);
 
-  --navbar-height: 72px;
+  --navbar-height: 100px;
   --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -59,11 +58,11 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height);
+  min-height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .75rem 2rem;
+  padding: 0.5rem 2rem;
   z-index: 1000;
   background-color: transparent;
   transition: var(--transition-smooth);
@@ -82,7 +81,11 @@ img {
   align-items: center;
   gap: 0.2rem;
   text-decoration: none;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .Logo_img {
@@ -116,6 +119,19 @@ img {
   letter-spacing: inherit;
   text-align: inherit;
   display: inline;
+}
+
+/* ---- Agrupador lado derecho del nav ---- */
+.nav-links:first-of-type {
+  flex: 0 0 auto;
+}
+
+.nav-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 /* ---- Nav links ---- */
@@ -396,7 +412,7 @@ hr.fuerte {
 }
 
 .infoPlan {
-  background: linear-gradient(145deg, var(--color-accent), var(--color-accent-soft));
+  background: linear-gradient(145deg, #283594 0%, #1a296e 55%, #001f3f 100%);
   padding: 4rem 3rem;
   text-align: center;
   color: var(--color-white);
@@ -486,7 +502,7 @@ hr.fuerte {
   margin: 0 auto;
   padding: 3rem 2rem 4rem;
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .maraton-card {
@@ -530,10 +546,15 @@ hr.fuerte {
 
 .columna_izquierda.grande {
   flex: 1.5;
-  position: sticky;
-  top: calc(var(--navbar-height) + 1rem);
-  align-self: flex-start;
-  height: fit-content;
+}
+
+.columna_izquierda.grande img {
+  flex: 1;
+  height: 0; /* flex: 1 controla la altura en columna */
+  min-height: 420px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .columna_derecha {
@@ -551,67 +572,125 @@ hr.fuerte {
 }
 
 /* =====================================================
-   SECCIÓN: NUESTRO VIAJE (closing divs)
+   SECCIÓN: NUESTRO VIAJE
    ===================================================== */
 .closing_divs {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 3rem 2rem 4rem;
+  padding: 2rem 2rem 5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.father_img_container_ubs {
+/* Grid de 3 tarjetas */
+.viaje-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Tarjeta */
+.viaje-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.1);
   display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
+}
+
+.viaje-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 44px rgba(0, 31, 63, 0.16);
+}
+
+/* Área de imagen/gradiente */
+.viaje-card__media {
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.viaje-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.viaje-card:hover .viaje-card__media img {
+  transform: scale(1.06);
+}
+
+/* Variante sin imagen — gradiente de marca */
+.viaje-card__media--gradient {
+  background: linear-gradient(145deg, #283594 0%, #1a296e 55%, #001f3f 100%);
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.father_img_container_ubs > div {
-  flex: 1 1 260px;
-  max-width: 335px;
+.viaje-card__icon {
+  font-size: 3.2rem;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
 }
 
-.father_img_container_ubs img {
-  width: 100%;
-  height: 225px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
+/* Cuerpo de texto */
+.viaje-card__body {
+  padding: 1.6rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #fff;
 }
 
-.father_img_container_ubs h1 {
-  font-family: 'Georgia', serif;
-  font-size: 1.5rem;
-  color: var(--color-text-dark);
-  margin-top: 1rem;
-  font-style: italic;
-  text-align: center;
-}
-
-.father_img_container_ubs p {
+.viaje-card__number {
   font-family: 'DM Sans', sans-serif;
-  font-size: 1rem;
-  color: var(--color-text-dark);
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-}
-
-.father_img_container_ubs a {
-  font-size: 0.85rem;
-  color: var(--color-brand-dark);
-  text-decoration: underline;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--color-brand-mid);
   text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  transition: color 0.25s ease;
+  margin-bottom: 0.6rem;
 }
 
-.father_img_container_ubs a:hover {
+.viaje-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-brand-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.viaje-card__desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.4rem;
+}
+
+.viaje-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  text-decoration: none;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.viaje-card__link:hover {
+  gap: 0.8rem;
   color: var(--color-brand-mid);
 }
 
@@ -726,8 +805,7 @@ hr.fuerte {
 }
 
 @media (max-width: 900px) {
-  .father_img_container,
-  .father_img_container_ubs {
+  .father_img_container {
     flex-direction: column;
     align-items: center;
   }
@@ -738,45 +816,121 @@ hr.fuerte {
 
   .maratones {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .columna_izquierda.grande {
-    position: static;
     width: 100%;
+  }
+
+  .columna_izquierda.grande img {
+    min-height: 320px;
+    height: 320px;
+    flex: none;
   }
 
   .infoPlan ul {
     gap: 1.5rem;
   }
+
+  /* Viaje grid: 2 columnas en tablet */
+  .viaje-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
+  /* ── Hero ── */
   .hero-content {
     padding: 0 1.25rem;
     gap: 1rem;
   }
 
   .btn {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.88rem;
+    padding: 0.7rem 1.75rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Sobre Nosotros ── */
+  .Info_Container {
+    padding: 3.5rem 1.25rem 3rem;
+    gap: 1.25rem;
+  }
+
+  .title_infoContainer h2 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
   }
 
   .txt_Nosotros p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 1rem 1.25rem;
+    line-height: 1.7;
   }
 
+  /* ── Carreras: carrusel horizontal deslizable ── */
+  .carreras_container {
+    padding: 2rem 0 2.5rem;
+    max-width: 100%;
+    /* sin overflow:hidden para permitir scroll del carrusel hijo */
+  }
+
+  .father_img_container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0 1.25rem 0.75rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .father_img_container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carreras_container_img {
+    flex: 0 0 72vw;
+    max-width: 72vw;
+    scroll-snap-align: start;
+  }
+
+  .carreras_img_wrapper {
+    height: 240px;
+  }
+
+  /* ── Planes ── */
   .planesPersonalizados {
     min-height: auto;
-    padding: 3rem 1.25rem;
+    padding: 2.5rem 1rem;
   }
 
   .infoPlan {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.25rem 2.25rem;
+    border-radius: 10px;
   }
 
   .infoPlan h1 {
+    font-size: 1.65rem;
     padding-top: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .infoPlan h3 {
+    font-size: 1.05rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .infoPlan h2 {
+    font-size: 0.95rem;
+    padding-bottom: 1.25rem;
   }
 
   .infoPlan ul {
@@ -787,34 +941,63 @@ hr.fuerte {
   .infoPlan li a {
     width: 100%;
     text-align: center;
-    display: block;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .carreras_container {
-    padding: 2.5rem 1.25rem;
-  }
-
-  .carreras_img_wrapper {
-    height: 260px;
-  }
-
+  /* ── Maratones ── */
   .txt-maratones {
-    padding: 3rem 1.25rem 1.5rem;
+    padding: 2.5rem 1.25rem 1.25rem;
+  }
+
+  .txt-maratones h1 {
+    font-size: 1.85rem;
   }
 
   .maratones {
-    padding: 2rem 1.25rem 3rem;
+    padding: 1.5rem 1.25rem 3rem;
   }
 
+  .columna_izquierda.grande img {
+    min-height: 210px;
+    height: 210px;
+    flex: none;
+  }
+
+  /* Grid de artículos: 2 columnas en móvil */
   .maraton-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
+  .maraton-grid .maraton-card img {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .maraton-card h2 {
+    font-size: 0.92rem;
+  }
+
+  .maraton-card p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* ── Nuestro Viaje ── */
   .closing_divs {
-    padding: 2rem 1.25rem 3rem;
+    padding: 1.5rem 1.25rem 3rem;
   }
 
+  .viaje-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ── Footer ── */
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -825,6 +1008,42 @@ hr.fuerte {
   .footer__col {
     max-width: 100%;
   }
+}
+
+/* ── Botón modo oscuro — circular ── */
+.dark-mode-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  padding: 0;
+}
+
+.navbar.scrolled .dark-mode-toggle {
+  border-color: rgba(0, 31, 63, 0.22);
+  background: rgba(0, 31, 63, 0.06);
+  color: var(--color-brand-dark);
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.08);
+}
+
+.navbar.scrolled .dark-mode-toggle:hover {
+  background: rgba(0, 31, 63, 0.12);
+  transform: scale(1.08);
 }
 
 /* ── Hamburger toggle button ── */
@@ -893,11 +1112,17 @@ hr.fuerte {
     flex-direction: row;
     justify-content: flex-start;
     gap: 0.6rem;
+    position: static;
+    transform: none;
   }
 
   .Logo_img { width: 2.4rem; height: 2.4rem; }
   .logo p   { font-size: 0.88rem; }
 
+  /* nav-right se disuelve en mobile: sus hijos son flex-items directos del navbar */
+  .nav-right { display: contents; }
+
+  .dark-mode-toggle { order: 2; margin-right: 0.25rem; }
   .nav-toggle { order: 2; }
 
   .nav-links {
@@ -910,6 +1135,7 @@ hr.fuerte {
   }
 
   .nav-links:first-of-type {
+    flex: initial; /* reset del flex: 1 de desktop */
     border-top: 2px solid var(--color-brand-mid);
     margin-top: 0.4rem;
     animation: slideDown 0.28s ease both;
@@ -963,11 +1189,143 @@ hr.fuerte {
    RESPONSIVE — 400px (very small phones)
    ===================================================== */
 @media (max-width: 400px) {
-  .logo p       { display: none; }
-  .Logo_img     { width: 2rem; height: 2rem; }
-  .carreras_img_wrapper { height: 220px; }
-  .Info_Container { padding: 3.5rem 1rem 3rem; }
+  .logo p           { display: none; }
+  .Logo_img         { width: 2rem; height: 2rem; }
+
+  .Info_Container   { padding: 3rem 1rem 2.5rem; }
+
+  /* Carreras: tarjeta un poco más ancha en pantallas muy pequeñas */
+  .carreras_container_img {
+    flex: 0 0 82vw;
+    max-width: 82vw;
+  }
+
+  .carreras_img_wrapper { height: 210px; }
+
+  /* Maratones: volver a 1 columna en pantallas muy pequeñas */
+  .maraton-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maraton-grid .maraton-card img {
+    height: auto;
+  }
 }
+
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
+html.dark-mode {
+  color-scheme: dark;
+}
+
+.dark-mode body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Navbar */
+.dark-mode .navbar.scrolled {
+  background-color: #1a2035;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .navbar.scrolled .logo p { color: #e2e8f0; }
+
+.dark-mode .navbar.scrolled .nav-links a { color: #e2e8f0; }
+.dark-mode .navbar.scrolled .nav-links a:hover { color: #93c5fd; }
+
+.dark-mode .navbar.scrolled .nav-toggle span,
+.dark-mode .navbar.nav-open .nav-toggle span { background-color: #e2e8f0; }
+
+.dark-mode .navbar.scrolled .dark-mode-toggle {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Círculo blanco sólido detrás del logo en modo oscuro */
+.dark-mode .Logo_img {
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0 4.5px #fff;
+}
+
+.dark-mode .navbar.nav-open {
+  background-color: #1a2035;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .navbar.nav-open .logo p { color: #e2e8f0; }
+
+@media (max-width: 768px) {
+  .dark-mode .nav-links {
+    background: #1a2035;
+  }
+
+  .dark-mode .nav-links a {
+    color: #e2e8f0 !important;
+    border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .dark-mode .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #93c5fd !important;
+    padding-left: 2rem;
+  }
+
+  /* Carreras: fondo oscuro entre las tarjetas del carrusel */
+  .dark-mode .carreras_container {
+    background: #0f172a;
+  }
+}
+
+/* Secciones index */
+.dark-mode .Info_Container { background: #1e293b; }
+.dark-mode .title_infoContainer h2 { color: #93c5fd; }
+.dark-mode .txt_Nosotros p {
+  background: rgba(40, 53, 148, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode hr.sutil  { border-top-color: rgba(255, 255, 255, 0.07); }
+.dark-mode hr.fuerte { border-top-color: rgba(255, 255, 255, 0.15); }
+
+.dark-mode .carreras_container_img h1 { color: #e2e8f0; }
+.dark-mode .carreras_container_img p  { color: #94a3b8; }
+.dark-mode .carreras_container_img a  { color: #93c5fd; }
+.dark-mode .carreras_container_img a:hover { color: #60a5fa; }
+
+.dark-mode .planesPersonalizados { background-color: #0f172a; }
+
+.dark-mode .txt-maratones h1 { color: #e2e8f0; }
+.dark-mode .txt-maratones p  { color: #94a3b8; }
+
+.dark-mode .maraton-card h2 { color: #e2e8f0; }
+.dark-mode .maraton-card p  { color: #94a3b8; }
+.dark-mode .maraton-card a  { color: #93c5fd; }
+.dark-mode .maraton-card a:hover { color: #60a5fa; }
+
+/* Tarjetas Nuestro Viaje */
+.dark-mode .viaje-card {
+  background: #1e293b;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .viaje-card:hover {
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .viaje-card__body { background: #1e293b; }
+.dark-mode .viaje-card__number { color: #93c5fd; }
+.dark-mode .viaje-card__title  { color: #e2e8f0; }
+.dark-mode .viaje-card__desc   { color: #94a3b8; }
+.dark-mode .viaje-card__link   { color: #93c5fd; }
+.dark-mode .viaje-card__link:hover { color: #60a5fa; }
 
 
 

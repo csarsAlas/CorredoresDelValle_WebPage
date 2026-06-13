@@ -212,8 +212,8 @@
 
 
 /* ─────────────────────────────────────────
-   FORMULARIO DE CONTACTO  (contacto.html)
-   Envío real via Web3Forms — web3forms.com
+   FORMULARIO DE CONTACTO 
+  web3forms.com
 ───────────────────────────────────────── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -327,7 +327,6 @@
     btnSubmit.disabled = true;
 
     try {
-      /* Obtén tu clave gratuita en web3forms.com y reemplaza el valor de access_key */
       const payload = {
         access_key:  '3ce4459e-d66f-4352-9d04-0423932d7bb3',
         from_name:   'Club Corredores del Valle – Sitio Web',
@@ -396,5 +395,34 @@
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }
+  });
+})();
+
+
+/* ─────────────────────────────────────────
+   MODO OSCURO — todas las páginas
+───────────────────────────────────────── */
+(function initDarkMode() {
+  const btn = document.getElementById('darkModeToggle');
+  if (!btn) return;
+
+  const DARK_CLASS  = 'dark-mode';
+  const STORAGE_KEY = 'cdv-theme';
+
+  function applyTheme(dark) {
+    document.documentElement.classList.toggle(DARK_CLASS, dark);
+    const icon = btn.querySelector('i');
+    if (icon) icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    btn.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+  }
+
+  const saved       = localStorage.getItem(STORAGE_KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved === 'dark' || (saved === null && prefersDark));
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains(DARK_CLASS);
+    applyTheme(!isDark);
+    localStorage.setItem(STORAGE_KEY, !isDark ? 'dark' : 'light');
   });
 })();

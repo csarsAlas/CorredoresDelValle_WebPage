@@ -37,7 +37,7 @@
    Compensa la altura de la navbar fija (72px)
    ===================================================== */
 .page-banner {
-  padding-top: calc(72px + 3.5rem);
+  padding-top: calc(var(--navbar-height) + 3.5rem);
   padding-bottom: 2.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -430,7 +430,7 @@
   }
 
   .page-banner {
-    padding-top: calc(72px + 2rem);
+    padding-top: calc(var(--navbar-height) + 2rem);
     padding-bottom: 2rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -457,3 +457,50 @@
   .contact-detail-label { font-size: 0.72rem; }
   .contact-detail-value { font-size: 0.85rem; }
 }
+
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
+.dark-mode #contacto { background: #0f172a; }
+
+.dark-mode .section-title    { color: #93c5fd; }
+.dark-mode .section-subtitle { color: #94a3b8; }
+
+.dark-mode .contact-info-title { color: #e2e8f0; }
+.dark-mode .contact-info-text  { color: #94a3b8; }
+
+.dark-mode .contact-detail-icon  { background: #1e293b; color: #93c5fd; }
+.dark-mode .contact-detail-label { color: #64748b; }
+.dark-mode .contact-detail-value { color: #e2e8f0; }
+
+.dark-mode .contact-form-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-label { color: #e2e8f0; }
+
+.dark-mode .form-input,
+.dark-mode .form-select,
+.dark-mode .form-textarea {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .form-input:focus,
+.dark-mode .form-select:focus,
+.dark-mode .form-textarea:focus {
+  border-color: #4f6bcd;
+  background: #1a2035;
+  box-shadow: 0 0 0 3px rgba(79, 107, 205, 0.2);
+}
+
+.dark-mode .form-input::placeholder,
+.dark-mode .form-textarea::placeholder { color: #475569; }
+
+.dark-mode .privacy-row label { color: #94a3b8; }
+.dark-mode .char-counter       { color: #64748b; }
+
+.dark-mode .navbar.scrolled .nav-active { color: #93c5fd !important; }

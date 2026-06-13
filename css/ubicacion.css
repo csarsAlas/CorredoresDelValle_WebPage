@@ -37,7 +37,7 @@
    Compensa la altura de la navbar fija (72px)
    ===================================================== */
 .page-banner {
-  padding-top: calc(72px + 3.5rem);
+  padding-top: calc(var(--navbar-height) + 3.5rem);
   padding-bottom: 2.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -388,7 +388,7 @@
   }
 
   .page-banner {
-    padding-top: calc(72px + 2rem);
+    padding-top: calc(var(--navbar-height) + 2rem);
     padding-bottom: 2rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -429,3 +429,49 @@
     font-size: 0.78rem;
   }
 }
+
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
+.dark-mode #ubicaciones { background: #0f172a; }
+
+.dark-mode .section-title    { color: #93c5fd; }
+.dark-mode .section-subtitle { color: #94a3b8; }
+
+.dark-mode .filter-btn {
+  background: #1e293b;
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .filter-btn:hover { background: #243050; color: #e2e8f0; }
+.dark-mode .filter-btn.active { background: #001f3f; border-color: #001f3f; color: #fff; }
+
+.dark-mode .locations-panel {
+  background: #1e293b;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.dark-mode .location-card { border-bottom-color: rgba(255, 255, 255, 0.06); }
+.dark-mode .location-card:hover,
+.dark-mode .location-card.selected { background: #243050; }
+
+.dark-mode .loc-name { color: #e2e8f0; }
+.dark-mode .loc-meta { color: #64748b; }
+
+.dark-mode .map-info-popup {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .popup-title   { color: #e2e8f0; }
+.dark-mode .popup-address { color: #94a3b8; }
+.dark-mode .popup-desc    { color: #94a3b8; }
+.dark-mode .popup-close   { color: #94a3b8; }
+.dark-mode .popup-close:hover { color: #e2e8f0; }
+
+.dark-mode .popup-stat { background: #0f172a; }
+.dark-mode .popup-stat-value { color: #e2e8f0; }
+.dark-mode .popup-stat-label { color: #64748b; }
+
+.dark-mode .navbar.scrolled .nav-active { color: #93c5fd !important; }
